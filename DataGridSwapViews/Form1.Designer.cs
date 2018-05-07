@@ -34,7 +34,15 @@
          this.gridViewBarButtonItem = new DevExpress.XtraBars.BarButtonItem();
          this.layoutViewBarButtonItem = new DevExpress.XtraBars.BarButtonItem();
          this.cardViewBarButtonItem = new DevExpress.XtraBars.BarButtonItem();
-         this.explorerBarButtonItem = new DevExpress.XtraBars.BarButtonItem();
+         this.winExplorerBarSubItem = new DevExpress.XtraBars.BarSubItem();
+         this.defaultWinExplorerViewStyleBarButtonItem = new DevExpress.XtraBars.BarButtonItem();
+         this.contentWinExplorerViewStyleBarButtonItem = new DevExpress.XtraBars.BarButtonItem();
+         this.listWinExplorerViewStyleBarButtonItem = new DevExpress.XtraBars.BarButtonItem();
+         this.tilesWinExplorerViewStyleBarButtonItem = new DevExpress.XtraBars.BarButtonItem();
+         this.smallWinExplorerViewStyleBarButtonItem = new DevExpress.XtraBars.BarButtonItem();
+         this.mediumWinExplorerViewStyleBarButtonItem = new DevExpress.XtraBars.BarButtonItem();
+         this.largeWinExplorerViewStyleBarButtonItem = new DevExpress.XtraBars.BarButtonItem();
+         this.extralargeWinExplorerViewStyleBarButtonItem = new DevExpress.XtraBars.BarButtonItem();
          this.skinBarSubItem = new DevExpress.XtraBars.SkinBarSubItem();
          this.bar2 = new DevExpress.XtraBars.Bar();
          this.bar3 = new DevExpress.XtraBars.Bar();
@@ -45,27 +53,33 @@
          this.gridControl1 = new DevExpress.XtraGrid.GridControl();
          this.fooBarDataSet = new System.Data.DataSet();
          this.masterTable = new System.Data.DataTable();
-         this.idColumn = new System.Data.DataColumn();
-         this.nameColumn = new System.Data.DataColumn();
+         this.masterIDColumn = new System.Data.DataColumn();
+         this.masterNameColumn = new System.Data.DataColumn();
+         this.masterDescrColumn = new System.Data.DataColumn();
          this.detailTable = new System.Data.DataTable();
          this.detailMasterIDColumn = new System.Data.DataColumn();
          this.detailArgColumn = new System.Data.DataColumn();
          this.detailValColumn = new System.Data.DataColumn();
          this.cardView1 = new DevExpress.XtraGrid.Views.Card.CardView();
-         this.colIDColumn2 = new DevExpress.XtraGrid.Columns.GridColumn();
-         this.colnameColumn2 = new DevExpress.XtraGrid.Columns.GridColumn();
-         this.layoutView1 = new DevExpress.XtraGrid.Views.Layout.LayoutView();
-         this.colIDColumn1 = new DevExpress.XtraGrid.Columns.LayoutViewColumn();
-         this.layoutViewField_colIDColumn1 = new DevExpress.XtraGrid.Views.Layout.LayoutViewField();
-         this.colnameColumn1 = new DevExpress.XtraGrid.Columns.LayoutViewColumn();
-         this.layoutViewField_colnameColumn1 = new DevExpress.XtraGrid.Views.Layout.LayoutViewField();
-         this.layoutViewCard1 = new DevExpress.XtraGrid.Views.Layout.LayoutViewCard();
-         this.gridView1 = new DevExpress.XtraGrid.Views.Grid.GridView();
-         this.colIDColumn = new DevExpress.XtraGrid.Columns.GridColumn();
-         this.colnameColumn = new DevExpress.XtraGrid.Columns.GridColumn();
-         this.winExplorerView1 = new DevExpress.XtraGrid.Views.WinExplorer.WinExplorerView();
          this.colIDColumn3 = new DevExpress.XtraGrid.Columns.GridColumn();
          this.colnameColumn3 = new DevExpress.XtraGrid.Columns.GridColumn();
+         this.colmasterDescrColumn3 = new DevExpress.XtraGrid.Columns.GridColumn();
+         this.winExplorerView1 = new DevExpress.XtraGrid.Views.WinExplorer.WinExplorerView();
+         this.colIDColumn = new DevExpress.XtraGrid.Columns.GridColumn();
+         this.colnameColumn = new DevExpress.XtraGrid.Columns.GridColumn();
+         this.colmasterDescrColumn = new DevExpress.XtraGrid.Columns.GridColumn();
+         this.layoutView1 = new DevExpress.XtraGrid.Views.Layout.LayoutView();
+         this.colIDColumn2 = new DevExpress.XtraGrid.Columns.LayoutViewColumn();
+         this.layoutViewField_colIDColumn2 = new DevExpress.XtraGrid.Views.Layout.LayoutViewField();
+         this.colnameColumn2 = new DevExpress.XtraGrid.Columns.LayoutViewColumn();
+         this.layoutViewField_colnameColumn2 = new DevExpress.XtraGrid.Views.Layout.LayoutViewField();
+         this.colmasterDescrColumn2 = new DevExpress.XtraGrid.Columns.LayoutViewColumn();
+         this.layoutViewField_colmasterDescrColumn2 = new DevExpress.XtraGrid.Views.Layout.LayoutViewField();
+         this.layoutViewCard1 = new DevExpress.XtraGrid.Views.Layout.LayoutViewCard();
+         this.gridView1 = new DevExpress.XtraGrid.Views.Grid.GridView();
+         this.colIDColumn1 = new DevExpress.XtraGrid.Columns.GridColumn();
+         this.colnameColumn1 = new DevExpress.XtraGrid.Columns.GridColumn();
+         this.colmasterDescrColumn1 = new DevExpress.XtraGrid.Columns.GridColumn();
          this.defaultLookAndFeel1 = new DevExpress.LookAndFeel.DefaultLookAndFeel(this.components);
          ((System.ComponentModel.ISupportInitialize)(this.barManager1)).BeginInit();
          ((System.ComponentModel.ISupportInitialize)(this.gridControl1)).BeginInit();
@@ -73,12 +87,13 @@
          ((System.ComponentModel.ISupportInitialize)(this.masterTable)).BeginInit();
          ((System.ComponentModel.ISupportInitialize)(this.detailTable)).BeginInit();
          ((System.ComponentModel.ISupportInitialize)(this.cardView1)).BeginInit();
+         ((System.ComponentModel.ISupportInitialize)(this.winExplorerView1)).BeginInit();
          ((System.ComponentModel.ISupportInitialize)(this.layoutView1)).BeginInit();
-         ((System.ComponentModel.ISupportInitialize)(this.layoutViewField_colIDColumn1)).BeginInit();
-         ((System.ComponentModel.ISupportInitialize)(this.layoutViewField_colnameColumn1)).BeginInit();
+         ((System.ComponentModel.ISupportInitialize)(this.layoutViewField_colIDColumn2)).BeginInit();
+         ((System.ComponentModel.ISupportInitialize)(this.layoutViewField_colnameColumn2)).BeginInit();
+         ((System.ComponentModel.ISupportInitialize)(this.layoutViewField_colmasterDescrColumn2)).BeginInit();
          ((System.ComponentModel.ISupportInitialize)(this.layoutViewCard1)).BeginInit();
          ((System.ComponentModel.ISupportInitialize)(this.gridView1)).BeginInit();
-         ((System.ComponentModel.ISupportInitialize)(this.winExplorerView1)).BeginInit();
          this.SuspendLayout();
          // 
          // barManager1
@@ -96,10 +111,18 @@
             this.gridViewBarButtonItem,
             this.layoutViewBarButtonItem,
             this.cardViewBarButtonItem,
-            this.explorerBarButtonItem,
-            this.skinBarSubItem});
+            this.skinBarSubItem,
+            this.winExplorerBarSubItem,
+            this.contentWinExplorerViewStyleBarButtonItem,
+            this.listWinExplorerViewStyleBarButtonItem,
+            this.tilesWinExplorerViewStyleBarButtonItem,
+            this.smallWinExplorerViewStyleBarButtonItem,
+            this.mediumWinExplorerViewStyleBarButtonItem,
+            this.largeWinExplorerViewStyleBarButtonItem,
+            this.extralargeWinExplorerViewStyleBarButtonItem,
+            this.defaultWinExplorerViewStyleBarButtonItem});
          this.barManager1.MainMenu = this.bar2;
-         this.barManager1.MaxItemId = 5;
+         this.barManager1.MaxItemId = 14;
          this.barManager1.StatusBar = this.bar3;
          // 
          // bar1
@@ -112,7 +135,7 @@
             new DevExpress.XtraBars.LinkPersistInfo(this.gridViewBarButtonItem),
             new DevExpress.XtraBars.LinkPersistInfo(this.layoutViewBarButtonItem),
             new DevExpress.XtraBars.LinkPersistInfo(this.cardViewBarButtonItem),
-            new DevExpress.XtraBars.LinkPersistInfo(this.explorerBarButtonItem),
+            new DevExpress.XtraBars.LinkPersistInfo(this.winExplorerBarSubItem),
             new DevExpress.XtraBars.LinkPersistInfo(this.skinBarSubItem)});
          this.bar1.Text = "Tools";
          // 
@@ -137,12 +160,76 @@
          this.cardViewBarButtonItem.Name = "cardViewBarButtonItem";
          this.cardViewBarButtonItem.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.cardViewBarButtonItem_ItemClick);
          // 
-         // explorerBarButtonItem
+         // winExplorerBarSubItem
          // 
-         this.explorerBarButtonItem.Caption = "Explorer";
-         this.explorerBarButtonItem.Id = 3;
-         this.explorerBarButtonItem.Name = "explorerBarButtonItem";
-         this.explorerBarButtonItem.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.explorerBarButtonItem_ItemClick);
+         this.winExplorerBarSubItem.Caption = "WinExplorer";
+         this.winExplorerBarSubItem.Id = 5;
+         this.winExplorerBarSubItem.LinksPersistInfo.AddRange(new DevExpress.XtraBars.LinkPersistInfo[] {
+            new DevExpress.XtraBars.LinkPersistInfo(this.defaultWinExplorerViewStyleBarButtonItem),
+            new DevExpress.XtraBars.LinkPersistInfo(this.contentWinExplorerViewStyleBarButtonItem, true),
+            new DevExpress.XtraBars.LinkPersistInfo(this.listWinExplorerViewStyleBarButtonItem),
+            new DevExpress.XtraBars.LinkPersistInfo(this.tilesWinExplorerViewStyleBarButtonItem),
+            new DevExpress.XtraBars.LinkPersistInfo(this.smallWinExplorerViewStyleBarButtonItem, true),
+            new DevExpress.XtraBars.LinkPersistInfo(this.mediumWinExplorerViewStyleBarButtonItem),
+            new DevExpress.XtraBars.LinkPersistInfo(this.largeWinExplorerViewStyleBarButtonItem),
+            new DevExpress.XtraBars.LinkPersistInfo(this.extralargeWinExplorerViewStyleBarButtonItem)});
+         this.winExplorerBarSubItem.Name = "winExplorerBarSubItem";
+         // 
+         // defaultWinExplorerViewStyleBarButtonItem
+         // 
+         this.defaultWinExplorerViewStyleBarButtonItem.Caption = "Default";
+         this.defaultWinExplorerViewStyleBarButtonItem.Id = 13;
+         this.defaultWinExplorerViewStyleBarButtonItem.Name = "defaultWinExplorerViewStyleBarButtonItem";
+         this.defaultWinExplorerViewStyleBarButtonItem.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.defaultWinExplorerViewStyleBarButtonItem_ItemClick);
+         // 
+         // contentWinExplorerViewStyleBarButtonItem
+         // 
+         this.contentWinExplorerViewStyleBarButtonItem.Caption = "Content";
+         this.contentWinExplorerViewStyleBarButtonItem.Id = 6;
+         this.contentWinExplorerViewStyleBarButtonItem.Name = "contentWinExplorerViewStyleBarButtonItem";
+         this.contentWinExplorerViewStyleBarButtonItem.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.contentWinExplorerViewStyleBarButtonItem_ItemClick);
+         // 
+         // listWinExplorerViewStyleBarButtonItem
+         // 
+         this.listWinExplorerViewStyleBarButtonItem.Caption = "List";
+         this.listWinExplorerViewStyleBarButtonItem.Id = 7;
+         this.listWinExplorerViewStyleBarButtonItem.Name = "listWinExplorerViewStyleBarButtonItem";
+         this.listWinExplorerViewStyleBarButtonItem.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.listWinExplorerViewStyleBarButtonItem_ItemClick);
+         // 
+         // tilesWinExplorerViewStyleBarButtonItem
+         // 
+         this.tilesWinExplorerViewStyleBarButtonItem.Caption = "Tiles";
+         this.tilesWinExplorerViewStyleBarButtonItem.Id = 8;
+         this.tilesWinExplorerViewStyleBarButtonItem.Name = "tilesWinExplorerViewStyleBarButtonItem";
+         this.tilesWinExplorerViewStyleBarButtonItem.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.tilesWinExplorerViewStyleBarButtonItem_ItemClick);
+         // 
+         // smallWinExplorerViewStyleBarButtonItem
+         // 
+         this.smallWinExplorerViewStyleBarButtonItem.Caption = "Small";
+         this.smallWinExplorerViewStyleBarButtonItem.Id = 9;
+         this.smallWinExplorerViewStyleBarButtonItem.Name = "smallWinExplorerViewStyleBarButtonItem";
+         this.smallWinExplorerViewStyleBarButtonItem.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.smallWinExplorerViewStyleBarButtonItem_ItemClick);
+         // 
+         // mediumWinExplorerViewStyleBarButtonItem
+         // 
+         this.mediumWinExplorerViewStyleBarButtonItem.Caption = "Medium";
+         this.mediumWinExplorerViewStyleBarButtonItem.Id = 10;
+         this.mediumWinExplorerViewStyleBarButtonItem.Name = "mediumWinExplorerViewStyleBarButtonItem";
+         this.mediumWinExplorerViewStyleBarButtonItem.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.mediumWinExplorerViewStyleBarButtonItem_ItemClick);
+         // 
+         // largeWinExplorerViewStyleBarButtonItem
+         // 
+         this.largeWinExplorerViewStyleBarButtonItem.Caption = "Large";
+         this.largeWinExplorerViewStyleBarButtonItem.Id = 11;
+         this.largeWinExplorerViewStyleBarButtonItem.Name = "largeWinExplorerViewStyleBarButtonItem";
+         this.largeWinExplorerViewStyleBarButtonItem.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.largeWinExplorerViewStyleBarButtonItem_ItemClick);
+         // 
+         // extralargeWinExplorerViewStyleBarButtonItem
+         // 
+         this.extralargeWinExplorerViewStyleBarButtonItem.Caption = "ExtraLarge";
+         this.extralargeWinExplorerViewStyleBarButtonItem.Id = 12;
+         this.extralargeWinExplorerViewStyleBarButtonItem.Name = "extralargeWinExplorerViewStyleBarButtonItem";
+         this.extralargeWinExplorerViewStyleBarButtonItem.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.extralargeWinExplorerViewStyleBarButtonItem_ItemClick);
          // 
          // skinBarSubItem
          // 
@@ -178,15 +265,15 @@
          this.barDockControlTop.Dock = System.Windows.Forms.DockStyle.Top;
          this.barDockControlTop.Location = new System.Drawing.Point(0, 0);
          this.barDockControlTop.Manager = this.barManager1;
-         this.barDockControlTop.Size = new System.Drawing.Size(623, 50);
+         this.barDockControlTop.Size = new System.Drawing.Size(994, 50);
          // 
          // barDockControlBottom
          // 
          this.barDockControlBottom.CausesValidation = false;
          this.barDockControlBottom.Dock = System.Windows.Forms.DockStyle.Bottom;
-         this.barDockControlBottom.Location = new System.Drawing.Point(0, 297);
+         this.barDockControlBottom.Location = new System.Drawing.Point(0, 601);
          this.barDockControlBottom.Manager = this.barManager1;
-         this.barDockControlBottom.Size = new System.Drawing.Size(623, 22);
+         this.barDockControlBottom.Size = new System.Drawing.Size(994, 22);
          // 
          // barDockControlLeft
          // 
@@ -194,15 +281,15 @@
          this.barDockControlLeft.Dock = System.Windows.Forms.DockStyle.Left;
          this.barDockControlLeft.Location = new System.Drawing.Point(0, 50);
          this.barDockControlLeft.Manager = this.barManager1;
-         this.barDockControlLeft.Size = new System.Drawing.Size(0, 247);
+         this.barDockControlLeft.Size = new System.Drawing.Size(0, 551);
          // 
          // barDockControlRight
          // 
          this.barDockControlRight.CausesValidation = false;
          this.barDockControlRight.Dock = System.Windows.Forms.DockStyle.Right;
-         this.barDockControlRight.Location = new System.Drawing.Point(623, 50);
+         this.barDockControlRight.Location = new System.Drawing.Point(994, 50);
          this.barDockControlRight.Manager = this.barManager1;
-         this.barDockControlRight.Size = new System.Drawing.Size(0, 247);
+         this.barDockControlRight.Size = new System.Drawing.Size(0, 551);
          // 
          // gridControl1
          // 
@@ -211,17 +298,17 @@
          this.gridControl1.Dock = System.Windows.Forms.DockStyle.Fill;
          this.gridControl1.EmbeddedNavigator.Margin = new System.Windows.Forms.Padding(2);
          this.gridControl1.Location = new System.Drawing.Point(0, 50);
-         this.gridControl1.MainView = this.gridView1;
+         this.gridControl1.MainView = this.cardView1;
          this.gridControl1.Margin = new System.Windows.Forms.Padding(2);
          this.gridControl1.MenuManager = this.barManager1;
          this.gridControl1.Name = "gridControl1";
-         this.gridControl1.Size = new System.Drawing.Size(623, 247);
+         this.gridControl1.Size = new System.Drawing.Size(994, 551);
          this.gridControl1.TabIndex = 4;
          this.gridControl1.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.cardView1,
+            this.winExplorerView1,
             this.layoutView1,
-            this.gridView1,
-            this.winExplorerView1});
+            this.gridView1});
          // 
          // fooBarDataSet
          // 
@@ -237,25 +324,31 @@
          // masterTable
          // 
          this.masterTable.Columns.AddRange(new System.Data.DataColumn[] {
-            this.idColumn,
-            this.nameColumn});
+            this.masterIDColumn,
+            this.masterNameColumn,
+            this.masterDescrColumn});
          this.masterTable.Constraints.AddRange(new System.Data.Constraint[] {
             new System.Data.UniqueConstraint("Constraint1", new string[] {
                         "IDColumn"}, true)});
          this.masterTable.PrimaryKey = new System.Data.DataColumn[] {
-        this.idColumn};
+        this.masterIDColumn};
          this.masterTable.TableName = "Master";
          // 
-         // idColumn
+         // masterIDColumn
          // 
-         this.idColumn.AllowDBNull = false;
-         this.idColumn.Caption = "ID";
-         this.idColumn.ColumnName = "IDColumn";
+         this.masterIDColumn.AllowDBNull = false;
+         this.masterIDColumn.Caption = "ID";
+         this.masterIDColumn.ColumnName = "IDColumn";
          // 
-         // nameColumn
+         // masterNameColumn
          // 
-         this.nameColumn.Caption = "Name";
-         this.nameColumn.ColumnName = "nameColumn";
+         this.masterNameColumn.Caption = "Name";
+         this.masterNameColumn.ColumnName = "nameColumn";
+         // 
+         // masterDescrColumn
+         // 
+         this.masterDescrColumn.Caption = "Description";
+         this.masterDescrColumn.ColumnName = "masterDescrColumn";
          // 
          // detailTable
          // 
@@ -296,105 +389,13 @@
          // cardView1
          // 
          this.cardView1.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
-            this.colIDColumn2,
-            this.colnameColumn2});
+            this.colIDColumn3,
+            this.colnameColumn3,
+            this.colmasterDescrColumn3});
          this.cardView1.FocusedCardTopFieldIndex = 0;
          this.cardView1.GridControl = this.gridControl1;
          this.cardView1.Name = "cardView1";
          this.cardView1.CustomUnboundColumnData += new DevExpress.XtraGrid.Views.Base.CustomColumnDataEventHandler(this.cardView1_CustomUnboundColumnData);
-         // 
-         // colIDColumn2
-         // 
-         this.colIDColumn2.FieldName = "IDColumn";
-         this.colIDColumn2.Name = "colIDColumn2";
-         this.colIDColumn2.Visible = true;
-         this.colIDColumn2.VisibleIndex = 0;
-         // 
-         // colnameColumn2
-         // 
-         this.colnameColumn2.FieldName = "nameColumn";
-         this.colnameColumn2.Name = "colnameColumn2";
-         this.colnameColumn2.Visible = true;
-         this.colnameColumn2.VisibleIndex = 1;
-         // 
-         // layoutView1
-         // 
-         this.layoutView1.Columns.AddRange(new DevExpress.XtraGrid.Columns.LayoutViewColumn[] {
-            this.colIDColumn1,
-            this.colnameColumn1});
-         this.layoutView1.GridControl = this.gridControl1;
-         this.layoutView1.Name = "layoutView1";
-         this.layoutView1.TemplateCard = this.layoutViewCard1;
-         // 
-         // colIDColumn1
-         // 
-         this.colIDColumn1.FieldName = "IDColumn";
-         this.colIDColumn1.LayoutViewField = this.layoutViewField_colIDColumn1;
-         this.colIDColumn1.Name = "colIDColumn1";
-         // 
-         // layoutViewField_colIDColumn1
-         // 
-         this.layoutViewField_colIDColumn1.EditorPreferredWidth = 99;
-         this.layoutViewField_colIDColumn1.Location = new System.Drawing.Point(0, 0);
-         this.layoutViewField_colIDColumn1.Name = "layoutViewField_colIDColumn1";
-         this.layoutViewField_colIDColumn1.Size = new System.Drawing.Size(219, 26);
-         this.layoutViewField_colIDColumn1.TextSize = new System.Drawing.Size(68, 13);
-         // 
-         // colnameColumn1
-         // 
-         this.colnameColumn1.FieldName = "nameColumn";
-         this.colnameColumn1.LayoutViewField = this.layoutViewField_colnameColumn1;
-         this.colnameColumn1.Name = "colnameColumn1";
-         // 
-         // layoutViewField_colnameColumn1
-         // 
-         this.layoutViewField_colnameColumn1.EditorPreferredWidth = 99;
-         this.layoutViewField_colnameColumn1.Location = new System.Drawing.Point(0, 26);
-         this.layoutViewField_colnameColumn1.Name = "layoutViewField_colnameColumn1";
-         this.layoutViewField_colnameColumn1.Size = new System.Drawing.Size(219, 26);
-         this.layoutViewField_colnameColumn1.TextSize = new System.Drawing.Size(68, 13);
-         // 
-         // layoutViewCard1
-         // 
-         this.layoutViewCard1.HeaderButtonsLocation = DevExpress.Utils.GroupElementLocation.AfterText;
-         this.layoutViewCard1.Items.AddRange(new DevExpress.XtraLayout.BaseLayoutItem[] {
-            this.layoutViewField_colIDColumn1,
-            this.layoutViewField_colnameColumn1});
-         this.layoutViewCard1.Name = "layoutViewCard1";
-         this.layoutViewCard1.OptionsItemText.TextToControlDistance = 5;
-         // 
-         // gridView1
-         // 
-         this.gridView1.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
-            this.colIDColumn,
-            this.colnameColumn});
-         this.gridView1.GridControl = this.gridControl1;
-         this.gridView1.Name = "gridView1";
-         this.gridView1.OptionsMenu.DialogFormBorderEffect = DevExpress.XtraEditors.FormBorderEffect.Glow;
-         this.gridView1.OptionsMenu.ShowConditionalFormattingItem = true;
-         this.gridView1.OptionsMenu.ShowGroupSummaryEditorItem = true;
-         // 
-         // colIDColumn
-         // 
-         this.colIDColumn.FieldName = "IDColumn";
-         this.colIDColumn.Name = "colIDColumn";
-         this.colIDColumn.Visible = true;
-         this.colIDColumn.VisibleIndex = 0;
-         // 
-         // colnameColumn
-         // 
-         this.colnameColumn.FieldName = "nameColumn";
-         this.colnameColumn.Name = "colnameColumn";
-         this.colnameColumn.Visible = true;
-         this.colnameColumn.VisibleIndex = 1;
-         // 
-         // winExplorerView1
-         // 
-         this.winExplorerView1.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
-            this.colIDColumn3,
-            this.colnameColumn3});
-         this.winExplorerView1.GridControl = this.gridControl1;
-         this.winExplorerView1.Name = "winExplorerView1";
          // 
          // colIDColumn3
          // 
@@ -410,6 +411,143 @@
          this.colnameColumn3.Visible = true;
          this.colnameColumn3.VisibleIndex = 1;
          // 
+         // colmasterDescrColumn3
+         // 
+         this.colmasterDescrColumn3.FieldName = "masterDescrColumn";
+         this.colmasterDescrColumn3.Name = "colmasterDescrColumn3";
+         this.colmasterDescrColumn3.Visible = true;
+         this.colmasterDescrColumn3.VisibleIndex = 2;
+         // 
+         // winExplorerView1
+         // 
+         this.winExplorerView1.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
+            this.colIDColumn,
+            this.colnameColumn,
+            this.colmasterDescrColumn});
+         this.winExplorerView1.GridControl = this.gridControl1;
+         this.winExplorerView1.Name = "winExplorerView1";
+         this.winExplorerView1.OptionsView.ShowCheckBoxes = true;
+         this.winExplorerView1.OptionsView.ShowCheckBoxInGroupCaption = true;
+         this.winExplorerView1.CustomUnboundColumnData += new DevExpress.XtraGrid.Views.Base.CustomColumnDataEventHandler(this.winExplorerView1_CustomUnboundColumnData);
+         // 
+         // colIDColumn
+         // 
+         this.colIDColumn.FieldName = "IDColumn";
+         this.colIDColumn.Name = "colIDColumn";
+         this.colIDColumn.Visible = true;
+         this.colIDColumn.VisibleIndex = 0;
+         // 
+         // colnameColumn
+         // 
+         this.colnameColumn.FieldName = "nameColumn";
+         this.colnameColumn.Name = "colnameColumn";
+         this.colnameColumn.Visible = true;
+         this.colnameColumn.VisibleIndex = 1;
+         // 
+         // colmasterDescrColumn
+         // 
+         this.colmasterDescrColumn.FieldName = "masterDescrColumn";
+         this.colmasterDescrColumn.Name = "colmasterDescrColumn";
+         this.colmasterDescrColumn.Visible = true;
+         this.colmasterDescrColumn.VisibleIndex = 2;
+         // 
+         // layoutView1
+         // 
+         this.layoutView1.Columns.AddRange(new DevExpress.XtraGrid.Columns.LayoutViewColumn[] {
+            this.colIDColumn2,
+            this.colnameColumn2,
+            this.colmasterDescrColumn2});
+         this.layoutView1.GridControl = this.gridControl1;
+         this.layoutView1.Name = "layoutView1";
+         this.layoutView1.TemplateCard = this.layoutViewCard1;
+         this.layoutView1.CustomUnboundColumnData += new DevExpress.XtraGrid.Views.Base.CustomColumnDataEventHandler(this.layoutView1_CustomUnboundColumnData);
+         // 
+         // colIDColumn2
+         // 
+         this.colIDColumn2.FieldName = "IDColumn";
+         this.colIDColumn2.LayoutViewField = this.layoutViewField_colIDColumn2;
+         this.colIDColumn2.Name = "colIDColumn2";
+         // 
+         // layoutViewField_colIDColumn2
+         // 
+         this.layoutViewField_colIDColumn2.EditorPreferredWidth = 138;
+         this.layoutViewField_colIDColumn2.Location = new System.Drawing.Point(0, 0);
+         this.layoutViewField_colIDColumn2.Name = "layoutViewField_colIDColumn2";
+         this.layoutViewField_colIDColumn2.Size = new System.Drawing.Size(204, 20);
+         this.layoutViewField_colIDColumn2.TextSize = new System.Drawing.Size(105, 13);
+         // 
+         // colnameColumn2
+         // 
+         this.colnameColumn2.FieldName = "nameColumn";
+         this.colnameColumn2.LayoutViewField = this.layoutViewField_colnameColumn2;
+         this.colnameColumn2.Name = "colnameColumn2";
+         // 
+         // layoutViewField_colnameColumn2
+         // 
+         this.layoutViewField_colnameColumn2.EditorPreferredWidth = 138;
+         this.layoutViewField_colnameColumn2.Location = new System.Drawing.Point(0, 20);
+         this.layoutViewField_colnameColumn2.Name = "layoutViewField_colnameColumn2";
+         this.layoutViewField_colnameColumn2.Size = new System.Drawing.Size(204, 20);
+         this.layoutViewField_colnameColumn2.TextSize = new System.Drawing.Size(105, 13);
+         // 
+         // colmasterDescrColumn2
+         // 
+         this.colmasterDescrColumn2.FieldName = "masterDescrColumn";
+         this.colmasterDescrColumn2.LayoutViewField = this.layoutViewField_colmasterDescrColumn2;
+         this.colmasterDescrColumn2.Name = "colmasterDescrColumn2";
+         // 
+         // layoutViewField_colmasterDescrColumn2
+         // 
+         this.layoutViewField_colmasterDescrColumn2.EditorPreferredWidth = 138;
+         this.layoutViewField_colmasterDescrColumn2.Location = new System.Drawing.Point(0, 40);
+         this.layoutViewField_colmasterDescrColumn2.Name = "layoutViewField_colmasterDescrColumn2";
+         this.layoutViewField_colmasterDescrColumn2.Size = new System.Drawing.Size(204, 20);
+         this.layoutViewField_colmasterDescrColumn2.TextSize = new System.Drawing.Size(105, 13);
+         // 
+         // layoutViewCard1
+         // 
+         this.layoutViewCard1.HeaderButtonsLocation = DevExpress.Utils.GroupElementLocation.AfterText;
+         this.layoutViewCard1.Items.AddRange(new DevExpress.XtraLayout.BaseLayoutItem[] {
+            this.layoutViewField_colIDColumn2,
+            this.layoutViewField_colnameColumn2,
+            this.layoutViewField_colmasterDescrColumn2});
+         this.layoutViewCard1.Name = "layoutViewCard1";
+         this.layoutViewCard1.OptionsItemText.TextToControlDistance = 5;
+         // 
+         // gridView1
+         // 
+         this.gridView1.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
+            this.colIDColumn1,
+            this.colnameColumn1,
+            this.colmasterDescrColumn1});
+         this.gridView1.GridControl = this.gridControl1;
+         this.gridView1.Name = "gridView1";
+         this.gridView1.OptionsMenu.DialogFormBorderEffect = DevExpress.XtraEditors.FormBorderEffect.Glow;
+         this.gridView1.OptionsMenu.ShowConditionalFormattingItem = true;
+         this.gridView1.OptionsMenu.ShowGroupSummaryEditorItem = true;
+         this.gridView1.CustomUnboundColumnData += new DevExpress.XtraGrid.Views.Base.CustomColumnDataEventHandler(this.gridView1_CustomUnboundColumnData);
+         // 
+         // colIDColumn1
+         // 
+         this.colIDColumn1.FieldName = "IDColumn";
+         this.colIDColumn1.Name = "colIDColumn1";
+         this.colIDColumn1.Visible = true;
+         this.colIDColumn1.VisibleIndex = 0;
+         // 
+         // colnameColumn1
+         // 
+         this.colnameColumn1.FieldName = "nameColumn";
+         this.colnameColumn1.Name = "colnameColumn1";
+         this.colnameColumn1.Visible = true;
+         this.colnameColumn1.VisibleIndex = 1;
+         // 
+         // colmasterDescrColumn1
+         // 
+         this.colmasterDescrColumn1.FieldName = "masterDescrColumn";
+         this.colmasterDescrColumn1.Name = "colmasterDescrColumn1";
+         this.colmasterDescrColumn1.Visible = true;
+         this.colmasterDescrColumn1.VisibleIndex = 2;
+         // 
          // defaultLookAndFeel1
          // 
          this.defaultLookAndFeel1.LookAndFeel.SkinName = "Metropolis Dark";
@@ -418,7 +556,7 @@
          // 
          this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
          this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-         this.ClientSize = new System.Drawing.Size(623, 319);
+         this.ClientSize = new System.Drawing.Size(994, 623);
          this.Controls.Add(this.gridControl1);
          this.Controls.Add(this.barDockControlLeft);
          this.Controls.Add(this.barDockControlRight);
@@ -433,12 +571,13 @@
          ((System.ComponentModel.ISupportInitialize)(this.masterTable)).EndInit();
          ((System.ComponentModel.ISupportInitialize)(this.detailTable)).EndInit();
          ((System.ComponentModel.ISupportInitialize)(this.cardView1)).EndInit();
+         ((System.ComponentModel.ISupportInitialize)(this.winExplorerView1)).EndInit();
          ((System.ComponentModel.ISupportInitialize)(this.layoutView1)).EndInit();
-         ((System.ComponentModel.ISupportInitialize)(this.layoutViewField_colIDColumn1)).EndInit();
-         ((System.ComponentModel.ISupportInitialize)(this.layoutViewField_colnameColumn1)).EndInit();
+         ((System.ComponentModel.ISupportInitialize)(this.layoutViewField_colIDColumn2)).EndInit();
+         ((System.ComponentModel.ISupportInitialize)(this.layoutViewField_colnameColumn2)).EndInit();
+         ((System.ComponentModel.ISupportInitialize)(this.layoutViewField_colmasterDescrColumn2)).EndInit();
          ((System.ComponentModel.ISupportInitialize)(this.layoutViewCard1)).EndInit();
          ((System.ComponentModel.ISupportInitialize)(this.gridView1)).EndInit();
-         ((System.ComponentModel.ISupportInitialize)(this.winExplorerView1)).EndInit();
          this.ResumeLayout(false);
          this.PerformLayout();
 
@@ -457,7 +596,17 @@
       private DevExpress.XtraBars.BarButtonItem gridViewBarButtonItem;
       private DevExpress.XtraBars.BarButtonItem layoutViewBarButtonItem;
       private DevExpress.XtraBars.BarButtonItem cardViewBarButtonItem;
-      private DevExpress.XtraBars.BarButtonItem explorerBarButtonItem;
+      private DevExpress.XtraBars.SkinBarSubItem skinBarSubItem;
+      private DevExpress.LookAndFeel.DefaultLookAndFeel defaultLookAndFeel1;
+      private DevExpress.XtraBars.BarSubItem winExplorerBarSubItem;
+      private DevExpress.XtraBars.BarButtonItem defaultWinExplorerViewStyleBarButtonItem;
+      private DevExpress.XtraBars.BarButtonItem contentWinExplorerViewStyleBarButtonItem;
+      private DevExpress.XtraBars.BarButtonItem listWinExplorerViewStyleBarButtonItem;
+      private DevExpress.XtraBars.BarButtonItem tilesWinExplorerViewStyleBarButtonItem;
+      private DevExpress.XtraBars.BarButtonItem smallWinExplorerViewStyleBarButtonItem;
+      private DevExpress.XtraBars.BarButtonItem mediumWinExplorerViewStyleBarButtonItem;
+      private DevExpress.XtraBars.BarButtonItem largeWinExplorerViewStyleBarButtonItem;
+      private DevExpress.XtraBars.BarButtonItem extralargeWinExplorerViewStyleBarButtonItem;
       private DevExpress.XtraGrid.GridControl gridControl1;
       private DevExpress.XtraGrid.Views.Grid.GridView gridView1;
       private DevExpress.XtraGrid.Views.Layout.LayoutView layoutView1;
@@ -465,25 +614,29 @@
       private DevExpress.XtraGrid.Views.Card.CardView cardView1;
       private System.Data.DataSet fooBarDataSet;
       private System.Data.DataTable masterTable;
-      private System.Data.DataColumn idColumn;
-      private System.Data.DataColumn nameColumn;
+      private System.Data.DataColumn masterIDColumn;
+      private System.Data.DataColumn masterNameColumn;
+      private System.Data.DataColumn masterDescrColumn;
       private System.Data.DataTable detailTable;
       private System.Data.DataColumn detailMasterIDColumn;
       private System.Data.DataColumn detailArgColumn;
       private System.Data.DataColumn detailValColumn;
+      private DevExpress.XtraGrid.Views.Layout.LayoutViewCard layoutViewCard1;
       private DevExpress.XtraGrid.Columns.GridColumn colIDColumn;
       private DevExpress.XtraGrid.Columns.GridColumn colnameColumn;
-      private DevExpress.XtraGrid.Columns.LayoutViewColumn colIDColumn1;
-      private DevExpress.XtraGrid.Views.Layout.LayoutViewField layoutViewField_colIDColumn1;
-      private DevExpress.XtraGrid.Columns.LayoutViewColumn colnameColumn1;
-      private DevExpress.XtraGrid.Views.Layout.LayoutViewField layoutViewField_colnameColumn1;
-      private DevExpress.XtraGrid.Views.Layout.LayoutViewCard layoutViewCard1;
+      private DevExpress.XtraGrid.Columns.GridColumn colmasterDescrColumn;
+      private DevExpress.XtraGrid.Columns.LayoutViewColumn colIDColumn2;
+      private DevExpress.XtraGrid.Views.Layout.LayoutViewField layoutViewField_colIDColumn2;
+      private DevExpress.XtraGrid.Columns.LayoutViewColumn colnameColumn2;
+      private DevExpress.XtraGrid.Views.Layout.LayoutViewField layoutViewField_colnameColumn2;
+      private DevExpress.XtraGrid.Columns.LayoutViewColumn colmasterDescrColumn2;
+      private DevExpress.XtraGrid.Views.Layout.LayoutViewField layoutViewField_colmasterDescrColumn2;
+      private DevExpress.XtraGrid.Columns.GridColumn colIDColumn1;
+      private DevExpress.XtraGrid.Columns.GridColumn colnameColumn1;
+      private DevExpress.XtraGrid.Columns.GridColumn colmasterDescrColumn1;
       private DevExpress.XtraGrid.Columns.GridColumn colIDColumn3;
       private DevExpress.XtraGrid.Columns.GridColumn colnameColumn3;
-      private DevExpress.XtraGrid.Columns.GridColumn colIDColumn2;
-      private DevExpress.XtraGrid.Columns.GridColumn colnameColumn2;
-      private DevExpress.XtraBars.SkinBarSubItem skinBarSubItem;
-      private DevExpress.LookAndFeel.DefaultLookAndFeel defaultLookAndFeel1;
+      private DevExpress.XtraGrid.Columns.GridColumn colmasterDescrColumn3;
    }
 }
 

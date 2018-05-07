@@ -24,8 +24,8 @@ namespace Chart_Test
          //Application.Run( new Form1( ) );
          //Application.Run( new BindIndividualChartSeriesToDataRuntime( ) );
          //Application.Run( new BindUsingTemplatesRuntime( ) );
-         Application.Run( new ValueDataMembers( ) );
-         
+         //Application.Run( new ValueDataMembers( ) );
+         Application.Run( new ChartEmbeddedcs( ) );
 
       }
    }

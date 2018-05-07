@@ -69,6 +69,12 @@
     <Compile Include="BindUsingTemplatesRuntime.Designer.cs">
       <DependentUpon>BindUsingTemplatesRuntime.cs</DependentUpon>
     </Compile>
+    <Compile Include="ChartEmbeddedcs.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ChartEmbeddedcs.Designer.cs">
+      <DependentUpon>ChartEmbeddedcs.cs</DependentUpon>
+    </Compile>
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -88,6 +94,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="BindUsingTemplatesRuntime.resx">
       <DependentUpon>BindUsingTemplatesRuntime.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ChartEmbeddedcs.resx">
+      <DependentUpon>ChartEmbeddedcs.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
