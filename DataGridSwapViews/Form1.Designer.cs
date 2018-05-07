@@ -51,6 +51,9 @@
          this.detailMasterIDColumn = new System.Data.DataColumn();
          this.detailArgColumn = new System.Data.DataColumn();
          this.detailValColumn = new System.Data.DataColumn();
+         this.cardView1 = new DevExpress.XtraGrid.Views.Card.CardView();
+         this.colIDColumn2 = new DevExpress.XtraGrid.Columns.GridColumn();
+         this.colnameColumn2 = new DevExpress.XtraGrid.Columns.GridColumn();
          this.layoutView1 = new DevExpress.XtraGrid.Views.Layout.LayoutView();
          this.colIDColumn1 = new DevExpress.XtraGrid.Columns.LayoutViewColumn();
          this.layoutViewField_colIDColumn1 = new DevExpress.XtraGrid.Views.Layout.LayoutViewField();
@@ -63,22 +66,19 @@
          this.winExplorerView1 = new DevExpress.XtraGrid.Views.WinExplorer.WinExplorerView();
          this.colIDColumn3 = new DevExpress.XtraGrid.Columns.GridColumn();
          this.colnameColumn3 = new DevExpress.XtraGrid.Columns.GridColumn();
-         this.cardView1 = new DevExpress.XtraGrid.Views.Card.CardView();
-         this.colIDColumn2 = new DevExpress.XtraGrid.Columns.GridColumn();
-         this.colnameColumn2 = new DevExpress.XtraGrid.Columns.GridColumn();
          this.defaultLookAndFeel1 = new DevExpress.LookAndFeel.DefaultLookAndFeel(this.components);
          ((System.ComponentModel.ISupportInitialize)(this.barManager1)).BeginInit();
          ((System.ComponentModel.ISupportInitialize)(this.gridControl1)).BeginInit();
          ((System.ComponentModel.ISupportInitialize)(this.fooBarDataSet)).BeginInit();
          ((System.ComponentModel.ISupportInitialize)(this.masterTable)).BeginInit();
          ((System.ComponentModel.ISupportInitialize)(this.detailTable)).BeginInit();
+         ((System.ComponentModel.ISupportInitialize)(this.cardView1)).BeginInit();
          ((System.ComponentModel.ISupportInitialize)(this.layoutView1)).BeginInit();
          ((System.ComponentModel.ISupportInitialize)(this.layoutViewField_colIDColumn1)).BeginInit();
          ((System.ComponentModel.ISupportInitialize)(this.layoutViewField_colnameColumn1)).BeginInit();
          ((System.ComponentModel.ISupportInitialize)(this.layoutViewCard1)).BeginInit();
          ((System.ComponentModel.ISupportInitialize)(this.gridView1)).BeginInit();
          ((System.ComponentModel.ISupportInitialize)(this.winExplorerView1)).BeginInit();
-         ((System.ComponentModel.ISupportInitialize)(this.cardView1)).BeginInit();
          this.SuspendLayout();
          // 
          // barManager1
@@ -178,52 +178,50 @@
          this.barDockControlTop.Dock = System.Windows.Forms.DockStyle.Top;
          this.barDockControlTop.Location = new System.Drawing.Point(0, 0);
          this.barDockControlTop.Manager = this.barManager1;
-         this.barDockControlTop.Margin = new System.Windows.Forms.Padding(4);
-         this.barDockControlTop.Size = new System.Drawing.Size(934, 68);
+         this.barDockControlTop.Size = new System.Drawing.Size(623, 50);
          // 
          // barDockControlBottom
          // 
          this.barDockControlBottom.CausesValidation = false;
          this.barDockControlBottom.Dock = System.Windows.Forms.DockStyle.Bottom;
-         this.barDockControlBottom.Location = new System.Drawing.Point(0, 442);
+         this.barDockControlBottom.Location = new System.Drawing.Point(0, 297);
          this.barDockControlBottom.Manager = this.barManager1;
-         this.barDockControlBottom.Margin = new System.Windows.Forms.Padding(4);
-         this.barDockControlBottom.Size = new System.Drawing.Size(934, 24);
+         this.barDockControlBottom.Size = new System.Drawing.Size(623, 22);
          // 
          // barDockControlLeft
          // 
          this.barDockControlLeft.CausesValidation = false;
          this.barDockControlLeft.Dock = System.Windows.Forms.DockStyle.Left;
-         this.barDockControlLeft.Location = new System.Drawing.Point(0, 68);
+         this.barDockControlLeft.Location = new System.Drawing.Point(0, 50);
          this.barDockControlLeft.Manager = this.barManager1;
-         this.barDockControlLeft.Margin = new System.Windows.Forms.Padding(4);
-         this.barDockControlLeft.Size = new System.Drawing.Size(0, 374);
+         this.barDockControlLeft.Size = new System.Drawing.Size(0, 247);
          // 
          // barDockControlRight
          // 
          this.barDockControlRight.CausesValidation = false;
          this.barDockControlRight.Dock = System.Windows.Forms.DockStyle.Right;
-         this.barDockControlRight.Location = new System.Drawing.Point(934, 68);
+         this.barDockControlRight.Location = new System.Drawing.Point(623, 50);
          this.barDockControlRight.Manager = this.barManager1;
-         this.barDockControlRight.Margin = new System.Windows.Forms.Padding(4);
-         this.barDockControlRight.Size = new System.Drawing.Size(0, 374);
+         this.barDockControlRight.Size = new System.Drawing.Size(0, 247);
          // 
          // gridControl1
          // 
          this.gridControl1.DataMember = "Master";
          this.gridControl1.DataSource = this.fooBarDataSet;
          this.gridControl1.Dock = System.Windows.Forms.DockStyle.Fill;
-         this.gridControl1.Location = new System.Drawing.Point(0, 68);
-         this.gridControl1.MainView = this.layoutView1;
+         this.gridControl1.EmbeddedNavigator.Margin = new System.Windows.Forms.Padding(2);
+         this.gridControl1.Location = new System.Drawing.Point(0, 50);
+         this.gridControl1.MainView = this.gridView1;
+         this.gridControl1.Margin = new System.Windows.Forms.Padding(2);
          this.gridControl1.MenuManager = this.barManager1;
          this.gridControl1.Name = "gridControl1";
-         this.gridControl1.Size = new System.Drawing.Size(934, 374);
+         this.gridControl1.Size = new System.Drawing.Size(623, 247);
          this.gridControl1.TabIndex = 4;
          this.gridControl1.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
+            this.cardView1,
             this.layoutView1,
             this.gridView1,
-            this.winExplorerView1,
-            this.cardView1});
+            this.winExplorerView1});
          // 
          // fooBarDataSet
          // 
@@ -295,6 +293,30 @@
          this.detailValColumn.ColumnName = "valColumn";
          this.detailValColumn.DataType = typeof(short);
          // 
+         // cardView1
+         // 
+         this.cardView1.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
+            this.colIDColumn2,
+            this.colnameColumn2});
+         this.cardView1.FocusedCardTopFieldIndex = 0;
+         this.cardView1.GridControl = this.gridControl1;
+         this.cardView1.Name = "cardView1";
+         this.cardView1.CustomUnboundColumnData += new DevExpress.XtraGrid.Views.Base.CustomColumnDataEventHandler(this.cardView1_CustomUnboundColumnData);
+         // 
+         // colIDColumn2
+         // 
+         this.colIDColumn2.FieldName = "IDColumn";
+         this.colIDColumn2.Name = "colIDColumn2";
+         this.colIDColumn2.Visible = true;
+         this.colIDColumn2.VisibleIndex = 0;
+         // 
+         // colnameColumn2
+         // 
+         this.colnameColumn2.FieldName = "nameColumn";
+         this.colnameColumn2.Name = "colnameColumn2";
+         this.colnameColumn2.Visible = true;
+         this.colnameColumn2.VisibleIndex = 1;
+         // 
          // layoutView1
          // 
          this.layoutView1.Columns.AddRange(new DevExpress.XtraGrid.Columns.LayoutViewColumn[] {
@@ -312,11 +334,11 @@
          // 
          // layoutViewField_colIDColumn1
          // 
-         this.layoutViewField_colIDColumn1.EditorPreferredWidth = 148;
+         this.layoutViewField_colIDColumn1.EditorPreferredWidth = 99;
          this.layoutViewField_colIDColumn1.Location = new System.Drawing.Point(0, 0);
          this.layoutViewField_colIDColumn1.Name = "layoutViewField_colIDColumn1";
          this.layoutViewField_colIDColumn1.Size = new System.Drawing.Size(219, 26);
-         this.layoutViewField_colIDColumn1.TextSize = new System.Drawing.Size(47, 19);
+         this.layoutViewField_colIDColumn1.TextSize = new System.Drawing.Size(68, 13);
          // 
          // colnameColumn1
          // 
@@ -326,11 +348,11 @@
          // 
          // layoutViewField_colnameColumn1
          // 
-         this.layoutViewField_colnameColumn1.EditorPreferredWidth = 148;
+         this.layoutViewField_colnameColumn1.EditorPreferredWidth = 99;
          this.layoutViewField_colnameColumn1.Location = new System.Drawing.Point(0, 26);
          this.layoutViewField_colnameColumn1.Name = "layoutViewField_colnameColumn1";
          this.layoutViewField_colnameColumn1.Size = new System.Drawing.Size(219, 26);
-         this.layoutViewField_colnameColumn1.TextSize = new System.Drawing.Size(47, 19);
+         this.layoutViewField_colnameColumn1.TextSize = new System.Drawing.Size(68, 13);
          // 
          // layoutViewCard1
          // 
@@ -348,6 +370,9 @@
             this.colnameColumn});
          this.gridView1.GridControl = this.gridControl1;
          this.gridView1.Name = "gridView1";
+         this.gridView1.OptionsMenu.DialogFormBorderEffect = DevExpress.XtraEditors.FormBorderEffect.Glow;
+         this.gridView1.OptionsMenu.ShowConditionalFormattingItem = true;
+         this.gridView1.OptionsMenu.ShowGroupSummaryEditorItem = true;
          // 
          // colIDColumn
          // 
@@ -385,44 +410,20 @@
          this.colnameColumn3.Visible = true;
          this.colnameColumn3.VisibleIndex = 1;
          // 
-         // cardView1
-         // 
-         this.cardView1.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
-            this.colIDColumn2,
-            this.colnameColumn2});
-         this.cardView1.FocusedCardTopFieldIndex = 0;
-         this.cardView1.GridControl = this.gridControl1;
-         this.cardView1.Name = "cardView1";
-         // 
-         // colIDColumn2
-         // 
-         this.colIDColumn2.FieldName = "IDColumn";
-         this.colIDColumn2.Name = "colIDColumn2";
-         this.colIDColumn2.Visible = true;
-         this.colIDColumn2.VisibleIndex = 0;
-         // 
-         // colnameColumn2
-         // 
-         this.colnameColumn2.FieldName = "nameColumn";
-         this.colnameColumn2.Name = "colnameColumn2";
-         this.colnameColumn2.Visible = true;
-         this.colnameColumn2.VisibleIndex = 1;
-         // 
          // defaultLookAndFeel1
          // 
          this.defaultLookAndFeel1.LookAndFeel.SkinName = "Metropolis Dark";
          // 
          // Form1
          // 
-         this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 19F);
+         this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
          this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-         this.ClientSize = new System.Drawing.Size(934, 466);
+         this.ClientSize = new System.Drawing.Size(623, 319);
          this.Controls.Add(this.gridControl1);
          this.Controls.Add(this.barDockControlLeft);
          this.Controls.Add(this.barDockControlRight);
          this.Controls.Add(this.barDockControlBottom);
          this.Controls.Add(this.barDockControlTop);
-         this.Margin = new System.Windows.Forms.Padding(4);
          this.Name = "Form1";
          this.Text = "Form1";
          this.Load += new System.EventHandler(this.Form1_Load);
@@ -431,13 +432,13 @@
          ((System.ComponentModel.ISupportInitialize)(this.fooBarDataSet)).EndInit();
          ((System.ComponentModel.ISupportInitialize)(this.masterTable)).EndInit();
          ((System.ComponentModel.ISupportInitialize)(this.detailTable)).EndInit();
+         ((System.ComponentModel.ISupportInitialize)(this.cardView1)).EndInit();
          ((System.ComponentModel.ISupportInitialize)(this.layoutView1)).EndInit();
          ((System.ComponentModel.ISupportInitialize)(this.layoutViewField_colIDColumn1)).EndInit();
          ((System.ComponentModel.ISupportInitialize)(this.layoutViewField_colnameColumn1)).EndInit();
          ((System.ComponentModel.ISupportInitialize)(this.layoutViewCard1)).EndInit();
          ((System.ComponentModel.ISupportInitialize)(this.gridView1)).EndInit();
          ((System.ComponentModel.ISupportInitialize)(this.winExplorerView1)).EndInit();
-         ((System.ComponentModel.ISupportInitialize)(this.cardView1)).EndInit();
          this.ResumeLayout(false);
          this.PerformLayout();
 

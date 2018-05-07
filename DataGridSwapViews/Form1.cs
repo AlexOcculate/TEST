@@ -28,34 +28,43 @@ namespace DataGridSwapViews
       {
          this.createDataValues( );
          this.createCustomUnboundColumns( );
+         this.gridControl1.DataSource = this.fooBarDataSet;
+         this.gridControl1.DataMember = "Master";
+         //
+         this.gridView1.OptionsMenu.ShowConditionalFormattingItem = true;
+         this.gridView1.OptionsMenu.ShowGroupSummaryEditorItem = true;
       }
 
+      #region --- SWAP Events ---
       private void gridViewBarButtonItem_ItemClick( object sender, DevExpress.XtraBars.ItemClickEventArgs e )
       {
          this.gridControl1.MainView = this.gridView1;
-         this.gridControl1.DataSource = this.fooBarDataSet;
-         this.gridControl1.DataMember = "Master";
       }
 
       private void layoutViewBarButtonItem_ItemClick( object sender, DevExpress.XtraBars.ItemClickEventArgs e )
       {
          this.gridControl1.MainView = this.layoutView1;
-         this.gridControl1.DataSource = this.fooBarDataSet;
-         this.gridControl1.DataMember = "Master";
       }
 
       private void cardViewBarButtonItem_ItemClick( object sender, DevExpress.XtraBars.ItemClickEventArgs e )
       {
          this.gridControl1.MainView = this.cardView1;
-         this.gridControl1.DataSource = this.fooBarDataSet;
-         this.gridControl1.DataMember = "Master";
       }
 
       private void explorerBarButtonItem_ItemClick( object sender, DevExpress.XtraBars.ItemClickEventArgs e )
       {
          this.gridControl1.MainView = this.winExplorerView1;
-         this.gridControl1.DataSource = this.fooBarDataSet;
-         this.gridControl1.DataMember = "Master";
+      }
+      #endregion
+
+      #region --- Custom Unbound Columns ---
+      private void createCustomUnboundColumns()
+      {
+         this.createCUGridColString( );
+         this.createCUGridColChart( );
+         this.gridView1.CustomUnboundColumnData += this.GridView1_CustomUnboundColumnData;
+         this.layoutView1.CustomUnboundColumnData += this.LayoutView1_CustomUnboundColumnData;
+         this.winExplorerView1.CustomUnboundColumnData += this.WinExplorerView1_CustomUnboundColumnData;
       }
 
       private void GridView1_CustomUnboundColumnData( object sender, DevExpress.XtraGrid.Views.Base.CustomColumnDataEventArgs e )
@@ -71,35 +80,43 @@ namespace DataGridSwapViews
             return;
          }
       }
-
-      private void getCUChart( DevExpress.XtraGrid.Views.Base.CustomColumnDataEventArgs e )
+      private void cardView1_CustomUnboundColumnData( object sender, DevExpress.XtraGrid.Views.Base.CustomColumnDataEventArgs e )
       {
-         if( e.IsGetData )
+         if( e.Column.FieldName == CU_GRID_COL_STRING_FIELDNAME )
          {
-            if( this.cuChart.ContainsKey( e.ListSourceRowIndex ) )
-            {
-               e.Value = this.cuChart[ e.ListSourceRowIndex ];
-            }
-            else
-            {
-               DataRowView drv = e.Row as DataRowView;
-               string mid = drv[ this.idColumn.ColumnName ].ToString( );
-               DataTable dt = this.fooBarDataSet.Tables[ this.detailTable.TableName ];
-               List<SeriesArgVal> list = new List<SeriesArgVal>( );
-               foreach( DataRow dr in dt.Rows )
-               {
-                  string did = dr[ this.detailMasterIDColumn.ColumnName ].ToString( );
-                  if( string.Compare( did, mid, StringComparison.Ordinal ) == 0 )
-                  {
-                     string argument = dr[ this.detailArgColumn.ColumnName ].ToString( );
-                     object objvalue = dr[ this.detailValColumn.ColumnName ];
-                     int value = (Int16) dr[ this.detailValColumn.ColumnName ];
-                     list.Add( new SeriesArgVal( argument, value ) );
-                  }
-               }
-               this.cuChart.Add( e.ListSourceRowIndex, list );
-               e.Value = list;
-            }
+            this.getCUString( e );
+            return;
+         }
+         if( e.Column.FieldName == CU_GRID_COL_CHART_FIELDNAME )
+         {
+            this.getCUChart( e );
+            return;
+         }
+      }
+      private void LayoutView1_CustomUnboundColumnData( object sender, DevExpress.XtraGrid.Views.Base.CustomColumnDataEventArgs e )
+      {
+         if( e.Column.FieldName == CU_GRID_COL_STRING_FIELDNAME )
+         {
+            this.getCUString( e );
+            return;
+         }
+         if( e.Column.FieldName == CU_GRID_COL_CHART_FIELDNAME )
+         {
+            this.getCUChart( e );
+            return;
+         }
+      }
+      private void WinExplorerView1_CustomUnboundColumnData( object sender, DevExpress.XtraGrid.Views.Base.CustomColumnDataEventArgs e )
+      {
+         if( e.Column.FieldName == CU_GRID_COL_STRING_FIELDNAME )
+         {
+            this.getCUString( e );
+            return;
+         }
+         if( e.Column.FieldName == CU_GRID_COL_CHART_FIELDNAME )
+         {
+            this.getCUChart( e );
+            return;
          }
       }
 
@@ -133,37 +150,82 @@ namespace DataGridSwapViews
             }
          }
       }
-
-      private void createCustomUnboundColumns()
+      private void getCUChart( DevExpress.XtraGrid.Views.Base.CustomColumnDataEventArgs e )
       {
-         this.createCUGridColString( );
-         this.createCUGridColChart( );
-         this.gridView1.CustomUnboundColumnData += this.GridView1_CustomUnboundColumnData;
-         this.cardView1.CustomUnboundColumnData += this.GridView1_CustomUnboundColumnData;
-         this.layoutView1.CustomUnboundColumnData += this.GridView1_CustomUnboundColumnData;
-         this.winExplorerView1.CustomUnboundColumnData += this.GridView1_CustomUnboundColumnData;
+         if( e.IsGetData )
+         {
+            if( this.cuChart.ContainsKey( e.ListSourceRowIndex ) )
+            {
+               e.Value = this.cuChart[ e.ListSourceRowIndex ];
+            }
+            else
+            {
+               DataRowView drv = e.Row as DataRowView;
+               string mid = drv[ this.idColumn.ColumnName ].ToString( );
+               DataTable dt = this.fooBarDataSet.Tables[ this.detailTable.TableName ];
+               List<SeriesArgVal> list = new List<SeriesArgVal>( );
+               foreach( DataRow dr in dt.Rows )
+               {
+                  string did = dr[ this.detailMasterIDColumn.ColumnName ].ToString( );
+                  if( string.Compare( did, mid, StringComparison.Ordinal ) == 0 )
+                  {
+                     string argument = dr[ this.detailArgColumn.ColumnName ].ToString( );
+                     object objvalue = dr[ this.detailValColumn.ColumnName ];
+                     int value = (Int16) dr[ this.detailValColumn.ColumnName ];
+                     list.Add( new SeriesArgVal( argument, value ) );
+                  }
+               }
+               this.cuChart.Add( e.ListSourceRowIndex, list );
+               e.Value = list;
+            }
+         }
       }
 
+      private void createCUGridColString()
+      {
+         {
+            GridColumn gc = new GridColumn( )
+            {
+               Caption = CU_GRID_COL_STRING_CAPTION,
+               FieldName = CU_GRID_COL_STRING_FIELDNAME,
+               UnboundType = DevExpress.Data.UnboundColumnType.String,
+               Visible = true
+            };
+            this.gridView1.Columns.Add( gc );
+         }
+         {
+            GridColumn gc = new GridColumn( )
+            {
+               Caption = CU_GRID_COL_STRING_CAPTION,
+               FieldName = CU_GRID_COL_STRING_FIELDNAME,
+               UnboundType = DevExpress.Data.UnboundColumnType.String,
+               Visible = true
+            };
+            this.cardView1.Columns.Add( gc );
+         }
+         {
+            LayoutViewColumn lvc = new LayoutViewColumn( )
+            {
+               Caption = CU_GRID_COL_STRING_CAPTION,
+               FieldName = CU_GRID_COL_STRING_FIELDNAME,
+               UnboundType = DevExpress.Data.UnboundColumnType.String,
+               Visible = true
+            };
+            this.layoutView1.Columns.Add( lvc );
+         }
+         {
+            GridColumn gc = new GridColumn( )
+            {
+               Caption = CU_GRID_COL_STRING_CAPTION,
+               FieldName = CU_GRID_COL_STRING_FIELDNAME,
+               UnboundType = DevExpress.Data.UnboundColumnType.String,
+               Visible = true
+            };
+            this.winExplorerView1.Columns.Add( gc );
+         }
+      }
       private void createCUGridColChart()
       {
-         GridColumn gc = new GridColumn( )
-         {
-            Caption = CU_GRID_COL_CHART_CAPTION,
-            FieldName = CU_GRID_COL_CHART_FIELDNAME,
-            UnboundType = DevExpress.Data.UnboundColumnType.Object,
-            Visible = true
-         };
-         this.gridView1.Columns.Add( gc );
-         this.cardView1.Columns.Add( gc );
-         LayoutViewColumn lvc = new LayoutViewColumn( )
-         {
-            Caption = CU_GRID_COL_CHART_CAPTION,
-            FieldName = CU_GRID_COL_CHART_FIELDNAME,
-            UnboundType = DevExpress.Data.UnboundColumnType.Object,
-            Visible = true
-         };
-         this.layoutView1.Columns.Add( lvc );
-         this.winExplorerView1.Columns.Add( gc );
          {
             Series serie = new Series( "Objects", ViewType.Bar );
             serie.ArgumentDataMember = SeriesArgVal.ARG_COLUMNNAME;
@@ -175,38 +237,69 @@ namespace DataGridSwapViews
             //column.View.GridControl.RepositoryItems.Add( item );
             this.gridControl1.RepositoryItems.Add( item );
             //((GridView) column.View).OptionsSelection.EnableAppearanceHideSelection = false;
-            gc.OptionsColumn.AllowEdit = false;
-            gc.OptionsFilter.AllowFilter = false;
-            gc.OptionsColumn.AllowGroup = DevExpress.Utils.DefaultBoolean.False;
-            gc.OptionsColumn.AllowSort = DevExpress.Utils.DefaultBoolean.False;
-            gc.ColumnEdit = item;
+            {
+               GridColumn gc = new GridColumn( )
+               {
+                  Caption = CU_GRID_COL_CHART_CAPTION,
+                  FieldName = CU_GRID_COL_CHART_FIELDNAME,
+                  UnboundType = DevExpress.Data.UnboundColumnType.Object,
+                  Visible = true
+               };
+               gc.OptionsColumn.AllowEdit = false;
+               gc.OptionsFilter.AllowFilter = false;
+               gc.OptionsColumn.AllowGroup = DevExpress.Utils.DefaultBoolean.False;
+               gc.OptionsColumn.AllowSort = DevExpress.Utils.DefaultBoolean.False;
+               gc.ColumnEdit = item;
+               this.gridView1.Columns.Add( gc );
+            }
+            {
+               GridColumn gc = new GridColumn( )
+               {
+                  Caption = CU_GRID_COL_CHART_CAPTION,
+                  FieldName = CU_GRID_COL_CHART_FIELDNAME,
+                  UnboundType = DevExpress.Data.UnboundColumnType.Object,
+                  Visible = true
+               };
+               gc.OptionsColumn.AllowEdit = false;
+               gc.OptionsFilter.AllowFilter = false;
+               gc.OptionsColumn.AllowGroup = DevExpress.Utils.DefaultBoolean.False;
+               gc.OptionsColumn.AllowSort = DevExpress.Utils.DefaultBoolean.False;
+               gc.ColumnEdit = item;
+               this.cardView1.Columns.Add( gc );
+            }
+            {
+               LayoutViewColumn lvc = new LayoutViewColumn( )
+               {
+                  Caption = CU_GRID_COL_CHART_CAPTION,
+                  FieldName = CU_GRID_COL_CHART_FIELDNAME,
+                  UnboundType = DevExpress.Data.UnboundColumnType.Object,
+                  Visible = true
+               };
+               lvc.OptionsColumn.AllowEdit = false;
+               lvc.OptionsFilter.AllowFilter = false;
+               lvc.OptionsColumn.AllowGroup = DevExpress.Utils.DefaultBoolean.False;
+               lvc.OptionsColumn.AllowSort = DevExpress.Utils.DefaultBoolean.False;
+               lvc.ColumnEdit = item;
+               this.layoutView1.Columns.Add( lvc );
+            }
+            {
+               GridColumn gc = new GridColumn( )
+               {
+                  Caption = CU_GRID_COL_CHART_CAPTION,
+                  FieldName = CU_GRID_COL_CHART_FIELDNAME,
+                  UnboundType = DevExpress.Data.UnboundColumnType.Object,
+                  Visible = true
+               };
+               gc.OptionsColumn.AllowEdit = false;
+               gc.OptionsFilter.AllowFilter = false;
+               gc.OptionsColumn.AllowGroup = DevExpress.Utils.DefaultBoolean.False;
+               gc.OptionsColumn.AllowSort = DevExpress.Utils.DefaultBoolean.False;
+               gc.ColumnEdit = item;
+               this.winExplorerView1.Columns.Add( gc );
+            }
          }
       }
-
-      private void createCUGridColString()
-      {
-         GridColumn gc = new GridColumn( )
-         {
-            Caption = CU_GRID_COL_STRING_CAPTION,
-            FieldName = CU_GRID_COL_STRING_FIELDNAME,
-            UnboundType = DevExpress.Data.UnboundColumnType.String,
-            Visible = true
-         };
-         this.gridView1.Columns.Add( gc );
-         //
-         this.cardView1.Columns.Add( gc );
-         //
-         LayoutViewColumn lvc = new LayoutViewColumn()
-         {
-            Caption = CU_GRID_COL_STRING_CAPTION,
-            FieldName = CU_GRID_COL_STRING_FIELDNAME,
-            UnboundType = DevExpress.Data.UnboundColumnType.String,
-            Visible = true
-         };
-         this.layoutView1.Columns.Add( lvc );
-         //
-         this.winExplorerView1.Columns.Add( gc );
-      }
+      #endregion
 
       private void createDataValues()
       {
@@ -230,5 +323,6 @@ namespace DataGridSwapViews
          this.detailTable.Rows.Add( new object[ ] { "M03", "TBL", 1000 } );
          this.detailTable.Rows.Add( new object[ ] { "M03", "VW", 30 } );
       }
+
    }
 }
