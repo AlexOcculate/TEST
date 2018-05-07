@@ -1,0 +1,58 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="XpoTutorial03.DataStoreModel">
+    <Position X="4.25" Y="2.5" Width="2.75" />
+    <TypeIdentifier>
+      <HashCode>AAAAIAAAEAAAAIAAAAAAAAQAAAAgAAAIACAAAAAAAAA=</HashCode>
+      <FileName>DataStoreModel.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="XpoTutorial03.DataStoreTreeNode">
+    <Position X="4.25" Y="5.75" Width="2.75" />
+    <TypeIdentifier>
+      <HashCode>AAgCEEAAAABkBIABAAAACAQABAAgAAAIAmCAAAAAAAA=</HashCode>
+      <FileName>DataStoreTreeNode.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="XpoTutorial03.DataStoreWizardForm">
+    <Position X="7.5" Y="2.5" Width="3.5" />
+    <TypeIdentifier>
+      <HashCode>BKKIEAADEGCgkVXgkACwEEpTAITAAiwIAakBAAqAhgg=</HashCode>
+      <FileName>DataStoreWizardForm.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="XpoTutorial03.Form1">
+    <Position X="0.5" Y="7.5" Width="3.25" />
+    <TypeIdentifier>
+      <HashCode>AEAAEAACAKAAAQAAEACAIAACAIQAAAAAAAkAAAIABwA=</HashCode>
+      <FileName>Form1.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="XpoTutorial03.ImagesHelper">
+    <Position X="0.5" Y="2.5" Width="3.25" />
+    <TypeIdentifier>
+      <HashCode>AACAAAAAAAAAAAAAAAACAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>ImagesHelper.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="XpoTutorial03.Program">
+    <Position X="0.5" Y="6" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAQAABAAAAAA=</HashCode>
+      <FileName>Program.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="XpoTutorial03.Properties.Resources" Collapsed="true">
+    <Position X="0.5" Y="4.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAEAAAAAAAAAAAAAAABEAAAAQAAAAAAAAAAQAAAAMA=</HashCode>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="XpoTutorial03.Properties.Settings" Collapsed="true">
+    <Position X="0.5" Y="5" Width="2.25" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAIAAAAAABAAAAAAAAAAAAAAA=</HashCode>
+    </TypeIdentifier>
+  </Class>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>
