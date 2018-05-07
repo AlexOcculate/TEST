@@ -105,6 +105,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Chart-Test", "Chart-Test\Ch
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GridPlusChart", "GridPlusChart\GridPlusChart.csproj", "{B70A5443-DC05-4CDC-B7BC-8925C253EC7F}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DataGridSwapViews", "DataGridSwapViews\DataGridSwapViews.csproj", "{0664BA36-11F5-46D4-9721-A5C82BACDE44}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -521,6 +523,14 @@ Global
 		{B70A5443-DC05-4CDC-B7BC-8925C253EC7F}.Release|Any CPU.Build.0 = Release|Any CPU
 		{B70A5443-DC05-4CDC-B7BC-8925C253EC7F}.Release|x86.ActiveCfg = Release|Any CPU
 		{B70A5443-DC05-4CDC-B7BC-8925C253EC7F}.Release|x86.Build.0 = Release|Any CPU
+		{0664BA36-11F5-46D4-9721-A5C82BACDE44}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0664BA36-11F5-46D4-9721-A5C82BACDE44}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0664BA36-11F5-46D4-9721-A5C82BACDE44}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{0664BA36-11F5-46D4-9721-A5C82BACDE44}.Debug|x86.Build.0 = Debug|Any CPU
+		{0664BA36-11F5-46D4-9721-A5C82BACDE44}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0664BA36-11F5-46D4-9721-A5C82BACDE44}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0664BA36-11F5-46D4-9721-A5C82BACDE44}.Release|x86.ActiveCfg = Release|Any CPU
+		{0664BA36-11F5-46D4-9721-A5C82BACDE44}.Release|x86.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
