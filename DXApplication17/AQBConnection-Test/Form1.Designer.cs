@@ -28,11 +28,12 @@
       /// </summary>
       private void InitializeComponent()
       {
-         this.components = new System.ComponentModel.Container();
          DevExpress.XtraBars.Docking2010.Views.Tabbed.DockingContainer dockingContainer1 = new DevExpress.XtraBars.Docking2010.Views.Tabbed.DockingContainer();
-         this.documentGroup1 = new DevExpress.XtraBars.Docking2010.Views.Tabbed.DocumentGroup(this.components);
-         this.document1 = new DevExpress.XtraBars.Docking2010.Views.Tabbed.Document(this.components);
-         this.barManager1 = new DevExpress.XtraBars.BarManager(this.components);
+         this.documentGroup1 = new DevExpress.XtraBars.Docking2010.Views.Tabbed.DocumentGroup();
+         this.aqbGridControlDocument = new DevExpress.XtraBars.Docking2010.Views.Tabbed.Document();
+         this.aqbPivotGridControlDocument = new DevExpress.XtraBars.Docking2010.Views.Tabbed.Document();
+         this.document1 = new DevExpress.XtraBars.Docking2010.Views.Tabbed.Document();
+         this.barManager1 = new DevExpress.XtraBars.BarManager();
          this.bar1 = new DevExpress.XtraBars.Bar();
          this.barSubItem1 = new DevExpress.XtraBars.BarSubItem();
          this.testAQBSqliteAUTOConnectionBarButtonItem = new DevExpress.XtraBars.BarButtonItem();
@@ -45,45 +46,78 @@
          this.barDockControlBottom = new DevExpress.XtraBars.BarDockControl();
          this.barDockControlLeft = new DevExpress.XtraBars.BarDockControl();
          this.barDockControlRight = new DevExpress.XtraBars.BarDockControl();
-         this.dockManager1 = new DevExpress.XtraBars.Docking.DockManager(this.components);
+         this.dockManager1 = new DevExpress.XtraBars.Docking.DockManager();
          this.dockPanel1 = new DevExpress.XtraBars.Docking.DockPanel();
          this.dockPanel1_Container = new DevExpress.XtraBars.Docking.ControlContainer();
          this.propertyGridControl = new DevExpress.XtraVerticalGrid.PropertyGridControl();
-         this.aqbSqliteGridDockPanel = new DevExpress.XtraBars.Docking.DockPanel();
-         this.dockPanel2_Container = new DevExpress.XtraBars.Docking.ControlContainer();
+         this.documentManager1 = new DevExpress.XtraBars.Docking2010.DocumentManager();
+         this.tabbedView1 = new DevExpress.XtraBars.Docking2010.Views.Tabbed.TabbedView();
+         this.aqbPivotGridControl = new DevExpress.XtraPivotGrid.PivotGridControl();
          this.aqbGridControl = new DevExpress.XtraGrid.GridControl();
          this.aqbGridView = new DevExpress.XtraGrid.Views.Grid.GridView();
-         this.documentManager1 = new DevExpress.XtraBars.Docking2010.DocumentManager(this.components);
-         this.tabbedView1 = new DevExpress.XtraBars.Docking2010.Views.Tabbed.TabbedView(this.components);
+         this.dashboardViewer1 = new DevExpress.DashboardWin.DashboardViewer();
          ((System.ComponentModel.ISupportInitialize)(this.documentGroup1)).BeginInit();
+         ((System.ComponentModel.ISupportInitialize)(this.aqbGridControlDocument)).BeginInit();
+         ((System.ComponentModel.ISupportInitialize)(this.aqbPivotGridControlDocument)).BeginInit();
          ((System.ComponentModel.ISupportInitialize)(this.document1)).BeginInit();
          ((System.ComponentModel.ISupportInitialize)(this.barManager1)).BeginInit();
          ((System.ComponentModel.ISupportInitialize)(this.dockManager1)).BeginInit();
          this.dockPanel1.SuspendLayout();
          this.dockPanel1_Container.SuspendLayout();
          ((System.ComponentModel.ISupportInitialize)(this.propertyGridControl)).BeginInit();
-         this.aqbSqliteGridDockPanel.SuspendLayout();
-         this.dockPanel2_Container.SuspendLayout();
-         ((System.ComponentModel.ISupportInitialize)(this.aqbGridControl)).BeginInit();
-         ((System.ComponentModel.ISupportInitialize)(this.aqbGridView)).BeginInit();
          ((System.ComponentModel.ISupportInitialize)(this.documentManager1)).BeginInit();
          ((System.ComponentModel.ISupportInitialize)(this.tabbedView1)).BeginInit();
+         ((System.ComponentModel.ISupportInitialize)(this.aqbPivotGridControl)).BeginInit();
+         ((System.ComponentModel.ISupportInitialize)(this.aqbGridControl)).BeginInit();
+         ((System.ComponentModel.ISupportInitialize)(this.aqbGridView)).BeginInit();
+         ((System.ComponentModel.ISupportInitialize)(this.dashboardViewer1)).BeginInit();
          this.SuspendLayout();
          // 
          // documentGroup1
          // 
          this.documentGroup1.Items.AddRange(new DevExpress.XtraBars.Docking2010.Views.Tabbed.Document[] {
+            this.aqbGridControlDocument,
+            this.aqbPivotGridControlDocument,
             this.document1});
+         // 
+         // aqbGridControlDocument
+         // 
+         this.aqbGridControlDocument.Caption = "AQB SQLite Grid";
+         this.aqbGridControlDocument.ControlName = "aqbGridControlDocument";
+         this.aqbGridControlDocument.ControlTypeName = "DevExpress.XtraPivotGrid.GridControl";
+         this.aqbGridControlDocument.FloatLocation = new System.Drawing.Point(0, 0);
+         this.aqbGridControlDocument.FloatSize = new System.Drawing.Size(200, 200);
+         this.aqbGridControlDocument.Properties.AllowClose = DevExpress.Utils.DefaultBoolean.True;
+         this.aqbGridControlDocument.Properties.AllowDock = DevExpress.Utils.DefaultBoolean.True;
+         this.aqbGridControlDocument.Properties.AllowDockFill = DevExpress.Utils.DefaultBoolean.True;
+         this.aqbGridControlDocument.Properties.AllowFloat = DevExpress.Utils.DefaultBoolean.True;
+         this.aqbGridControlDocument.Properties.AllowFloatOnDoubleClick = DevExpress.Utils.DefaultBoolean.True;
+         this.aqbGridControlDocument.Properties.AllowGlyphSkinning = DevExpress.Utils.DefaultBoolean.True;
+         this.aqbGridControlDocument.Properties.AllowPin = DevExpress.Utils.DefaultBoolean.True;
+         this.aqbGridControlDocument.Properties.AllowTabReordering = DevExpress.Utils.DefaultBoolean.True;
+         this.aqbGridControlDocument.Properties.ShowInDocumentSelector = DevExpress.Utils.DefaultBoolean.True;
+         this.aqbGridControlDocument.Properties.ShowPinButton = DevExpress.Utils.DefaultBoolean.True;
+         // 
+         // aqbPivotGridControlDocument
+         // 
+         this.aqbPivotGridControlDocument.Caption = "AQB PivotTable";
+         this.aqbPivotGridControlDocument.ControlName = "aqbPivotGridControl1";
+         this.aqbPivotGridControlDocument.ControlTypeName = "DevExpress.XtraPivotGrid.PivotGridControl";
+         this.aqbPivotGridControlDocument.Properties.AllowClose = DevExpress.Utils.DefaultBoolean.True;
+         this.aqbPivotGridControlDocument.Properties.AllowDock = DevExpress.Utils.DefaultBoolean.True;
+         this.aqbPivotGridControlDocument.Properties.AllowDockFill = DevExpress.Utils.DefaultBoolean.True;
+         this.aqbPivotGridControlDocument.Properties.AllowFloat = DevExpress.Utils.DefaultBoolean.True;
+         this.aqbPivotGridControlDocument.Properties.AllowFloatOnDoubleClick = DevExpress.Utils.DefaultBoolean.True;
+         this.aqbPivotGridControlDocument.Properties.AllowGlyphSkinning = DevExpress.Utils.DefaultBoolean.True;
+         this.aqbPivotGridControlDocument.Properties.AllowPin = DevExpress.Utils.DefaultBoolean.True;
+         this.aqbPivotGridControlDocument.Properties.AllowTabReordering = DevExpress.Utils.DefaultBoolean.True;
+         this.aqbPivotGridControlDocument.Properties.ShowInDocumentSelector = DevExpress.Utils.DefaultBoolean.True;
+         this.aqbPivotGridControlDocument.Properties.ShowPinButton = DevExpress.Utils.DefaultBoolean.True;
          // 
          // document1
          // 
-         this.document1.Caption = "AQB SQLite Grid";
-         this.document1.ControlName = "aqbSqliteGridDockPanel";
-         this.document1.FloatLocation = new System.Drawing.Point(0, 0);
-         this.document1.FloatSize = new System.Drawing.Size(200, 200);
-         this.document1.Properties.AllowClose = DevExpress.Utils.DefaultBoolean.True;
-         this.document1.Properties.AllowFloat = DevExpress.Utils.DefaultBoolean.True;
-         this.document1.Properties.AllowFloatOnDoubleClick = DevExpress.Utils.DefaultBoolean.True;
+         this.document1.Caption = "document1";
+         this.document1.ControlName = "document1";
          // 
          // barManager1
          // 
@@ -215,8 +249,7 @@
          this.dockManager1.Form = this;
          this.dockManager1.MenuManager = this.barManager1;
          this.dockManager1.RootPanels.AddRange(new DevExpress.XtraBars.Docking.DockPanel[] {
-            this.dockPanel1,
-            this.aqbSqliteGridDockPanel});
+            this.dockPanel1});
          this.dockManager1.TopZIndexControls.AddRange(new string[] {
             "DevExpress.XtraBars.BarDockControl",
             "DevExpress.XtraBars.StandaloneBarDockControl",
@@ -256,41 +289,6 @@
          this.propertyGridControl.Size = new System.Drawing.Size(378, 659);
          this.propertyGridControl.TabIndex = 0;
          // 
-         // aqbSqliteGridDockPanel
-         // 
-         this.aqbSqliteGridDockPanel.Controls.Add(this.dockPanel2_Container);
-         this.aqbSqliteGridDockPanel.DockedAsTabbedDocument = true;
-         this.aqbSqliteGridDockPanel.ID = new System.Guid("1fbd7c75-ee28-4bab-9b13-8bb79d31c52e");
-         this.aqbSqliteGridDockPanel.Name = "aqbSqliteGridDockPanel";
-         this.aqbSqliteGridDockPanel.OriginalSize = new System.Drawing.Size(200, 200);
-         this.aqbSqliteGridDockPanel.Text = "AQB SQLite Grid";
-         // 
-         // dockPanel2_Container
-         // 
-         this.dockPanel2_Container.Controls.Add(this.aqbGridControl);
-         this.dockPanel2_Container.Location = new System.Drawing.Point(0, 0);
-         this.dockPanel2_Container.Name = "dockPanel2_Container";
-         this.dockPanel2_Container.Size = new System.Drawing.Size(483, 671);
-         this.dockPanel2_Container.TabIndex = 0;
-         // 
-         // aqbSqliteGridControl
-         // 
-         this.aqbGridControl.Dock = System.Windows.Forms.DockStyle.Fill;
-         this.aqbGridControl.Location = new System.Drawing.Point(0, 0);
-         this.aqbGridControl.MainView = this.aqbGridView;
-         this.aqbGridControl.MenuManager = this.barManager1;
-         this.aqbGridControl.Name = "aqbSqliteGridControl";
-         this.aqbGridControl.Size = new System.Drawing.Size(483, 671);
-         this.aqbGridControl.TabIndex = 0;
-         this.aqbGridControl.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
-            this.aqbGridView});
-         // 
-         // gridView1
-         // 
-         this.aqbGridView.GridControl = this.aqbGridControl;
-         this.aqbGridView.Name = "gridView1";
-         this.aqbGridView.FocusedRowChanged += new DevExpress.XtraGrid.Views.Base.FocusedRowChangedEventHandler(this.gridView1_FocusedRowChanged);
-         // 
          // documentManager1
          // 
          this.documentManager1.ContainerControl = this;
@@ -303,16 +301,59 @@
          this.tabbedView1.DocumentGroups.AddRange(new DevExpress.XtraBars.Docking2010.Views.Tabbed.DocumentGroup[] {
             this.documentGroup1});
          this.tabbedView1.Documents.AddRange(new DevExpress.XtraBars.Docking2010.Views.BaseDocument[] {
+            this.aqbGridControlDocument,
+            this.aqbPivotGridControlDocument,
             this.document1});
          dockingContainer1.Element = this.documentGroup1;
          this.tabbedView1.RootContainer.Nodes.AddRange(new DevExpress.XtraBars.Docking2010.Views.Tabbed.DockingContainer[] {
             dockingContainer1});
+         this.tabbedView1.QueryControl += new DevExpress.XtraBars.Docking2010.Views.QueryControlEventHandler(this.tabbedView1_QueryControl);
+         this.tabbedView1.ControlReleasing += new DevExpress.XtraBars.Docking2010.Views.ControlReleasingEventHandler(this.tabbedView1_ControlReleasing);
+         // 
+         // aqbPivotGridControl
+         // 
+         this.aqbPivotGridControl.ActiveFilterString = "";
+         this.aqbPivotGridControl.Dock = System.Windows.Forms.DockStyle.Fill;
+         this.aqbPivotGridControl.Location = new System.Drawing.Point(387, 48);
+         this.aqbPivotGridControl.Name = "aqbPivotGridControl";
+         this.aqbPivotGridControl.Size = new System.Drawing.Size(489, 701);
+         this.aqbPivotGridControl.TabIndex = 6;
+         // 
+         // aqbGridControl
+         // 
+         this.aqbGridControl.Dock = System.Windows.Forms.DockStyle.Fill;
+         this.aqbGridControl.Location = new System.Drawing.Point(387, 48);
+         this.aqbGridControl.MainView = this.aqbGridView;
+         this.aqbGridControl.MenuManager = this.barManager1;
+         this.aqbGridControl.Name = "aqbGridControl";
+         this.aqbGridControl.Size = new System.Drawing.Size(489, 701);
+         this.aqbGridControl.TabIndex = 12;
+         this.aqbGridControl.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
+            this.aqbGridView});
+         // 
+         // aqbGridView
+         // 
+         this.aqbGridView.GridControl = this.aqbGridControl;
+         this.aqbGridView.Name = "aqbGridView";
+         this.aqbGridView.FocusedRowChanged += new DevExpress.XtraGrid.Views.Base.FocusedRowChangedEventHandler(this.aqbGridView_FocusedRowChanged);
+         // 
+         // dashboardViewer1
+         // 
+         this.dashboardViewer1.DashboardSource = new System.Uri("D:\\TEMP\\SQLite\\chinook\\lalal.xml", System.UriKind.Absolute);
+         this.dashboardViewer1.Dock = System.Windows.Forms.DockStyle.Fill;
+         this.dashboardViewer1.Location = new System.Drawing.Point(387, 48);
+         this.dashboardViewer1.Name = "dashboardViewer1";
+         this.dashboardViewer1.Size = new System.Drawing.Size(489, 701);
+         this.dashboardViewer1.TabIndex = 18;
          // 
          // Form1
          // 
          this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
          this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
          this.ClientSize = new System.Drawing.Size(876, 767);
+         this.Controls.Add(this.dashboardViewer1);
+         this.Controls.Add(this.aqbGridControl);
+         this.Controls.Add(this.aqbPivotGridControl);
          this.Controls.Add(this.dockPanel1);
          this.Controls.Add(this.barDockControlLeft);
          this.Controls.Add(this.barDockControlRight);
@@ -321,18 +362,20 @@
          this.Name = "Form1";
          this.Text = "Form1";
          ((System.ComponentModel.ISupportInitialize)(this.documentGroup1)).EndInit();
+         ((System.ComponentModel.ISupportInitialize)(this.aqbGridControlDocument)).EndInit();
+         ((System.ComponentModel.ISupportInitialize)(this.aqbPivotGridControlDocument)).EndInit();
          ((System.ComponentModel.ISupportInitialize)(this.document1)).EndInit();
          ((System.ComponentModel.ISupportInitialize)(this.barManager1)).EndInit();
          ((System.ComponentModel.ISupportInitialize)(this.dockManager1)).EndInit();
          this.dockPanel1.ResumeLayout(false);
          this.dockPanel1_Container.ResumeLayout(false);
          ((System.ComponentModel.ISupportInitialize)(this.propertyGridControl)).EndInit();
-         this.aqbSqliteGridDockPanel.ResumeLayout(false);
-         this.dockPanel2_Container.ResumeLayout(false);
-         ((System.ComponentModel.ISupportInitialize)(this.aqbGridControl)).EndInit();
-         ((System.ComponentModel.ISupportInitialize)(this.aqbGridView)).EndInit();
          ((System.ComponentModel.ISupportInitialize)(this.documentManager1)).EndInit();
          ((System.ComponentModel.ISupportInitialize)(this.tabbedView1)).EndInit();
+         ((System.ComponentModel.ISupportInitialize)(this.aqbPivotGridControl)).EndInit();
+         ((System.ComponentModel.ISupportInitialize)(this.aqbGridControl)).EndInit();
+         ((System.ComponentModel.ISupportInitialize)(this.aqbGridView)).EndInit();
+         ((System.ComponentModel.ISupportInitialize)(this.dashboardViewer1)).EndInit();
          this.ResumeLayout(false);
          this.PerformLayout();
 
@@ -353,18 +396,20 @@
       private DevExpress.XtraBars.Docking.DockManager dockManager1;
       private DevExpress.XtraBars.Docking.DockPanel dockPanel1;
       private DevExpress.XtraBars.Docking.ControlContainer dockPanel1_Container;
-      private DevExpress.XtraBars.Docking.DockPanel aqbSqliteGridDockPanel;
-      private DevExpress.XtraBars.Docking.ControlContainer dockPanel2_Container;
       private DevExpress.XtraBars.Docking2010.DocumentManager documentManager1;
       private DevExpress.XtraBars.Docking2010.Views.Tabbed.TabbedView tabbedView1;
       private DevExpress.XtraBars.Docking2010.Views.Tabbed.DocumentGroup documentGroup1;
-      private DevExpress.XtraBars.Docking2010.Views.Tabbed.Document document1;
-      private DevExpress.XtraGrid.GridControl aqbGridControl;
-      private DevExpress.XtraGrid.Views.Grid.GridView aqbGridView;
+      private DevExpress.XtraBars.Docking2010.Views.Tabbed.Document aqbGridControlDocument;
+      private DevExpress.XtraBars.Docking2010.Views.Tabbed.Document aqbPivotGridControlDocument;
       private DevExpress.XtraBars.BarSubItem barSubItem1;
       private DevExpress.XtraBars.BarSubItem barSubItem2;
       private DevExpress.XtraBars.BarButtonItem testAQBMsssAutoConnectionBarButtonItem;
       private DevExpress.XtraVerticalGrid.PropertyGridControl propertyGridControl;
+      private DevExpress.XtraPivotGrid.PivotGridControl aqbPivotGridControl;
+      private DevExpress.XtraGrid.GridControl aqbGridControl;
+      private DevExpress.XtraGrid.Views.Grid.GridView aqbGridView;
+      private DevExpress.XtraBars.Docking2010.Views.Tabbed.Document document1;
+      private DevExpress.DashboardWin.DashboardViewer dashboardViewer1;
    }
 }
 

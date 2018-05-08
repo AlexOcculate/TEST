@@ -1072,6 +1072,14 @@ namespace AQBConnection_Test.Model
       }
       #endregion
 
+      #region --- COUNT ---
+      public const string COUNT_FIELDNAME = "Count";
+      public const string COUNT_DISPLAYNAME = "Count";
+      public const string COUNT_DESCRIPTION = null;
+      public const string COUNT_CATEGORY = "Misc";
+      public const string COUNT_XMLNAME = "cnt";
+      #endregion
+
       public override string ToString()
       {
          //return string.Format("0:{1}", this.Type, this.NameFullQualified);

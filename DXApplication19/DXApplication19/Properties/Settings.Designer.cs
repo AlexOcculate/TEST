@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace AQBConnection_Test.Properties {
+namespace AQBMetadata.Properties {
     
     
     [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]

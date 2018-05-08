@@ -375,6 +375,8 @@ namespace DataGridSwapViews
       {
          //TODO: WHY TOOLTIP IS NOT WORKING???
          //TODO: HOW-TO INSERT CHART in WinExplorer Views
+         //TODO: How-TO Detail Tables
+         //TODO: HOW-TO Conditional Format Detail Tables and Height
          ChartControl cc = new ChartControl( );
          {
             cc.ToolTipEnabled = DevExpress.Utils.DefaultBoolean.True;

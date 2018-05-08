@@ -432,6 +432,7 @@ namespace DPControls.Controls.MetadataPuller
          , System.Data.DataTable tbl
          )
       {
+         row[ MetadataItemProps.COUNT_FIELDNAME ] = 1;
          row[ "ID" ] = tbl.Rows.Count;
          row[ "ParentID" ] = parentID;
          row[ "MetadataProvider" ] = mi.SQLContext?.MetadataProvider?.Description;
@@ -741,6 +742,13 @@ namespace DPControls.Controls.MetadataPuller
             System.Data.DataColumn c = new System.Data.DataColumn( );
             c.DataType = typeof( string );
             c.ColumnName = MetadataItemProps.USERDATA_FIELDNAME;
+            c.ReadOnly = true;
+            t.Columns.Add( c );
+         }
+         {
+            System.Data.DataColumn c = new System.Data.DataColumn( );
+            c.DataType = typeof( int );
+            c.ColumnName = MetadataItemProps.COUNT_FIELDNAME;
             c.ReadOnly = true;
             t.Columns.Add( c );
          }

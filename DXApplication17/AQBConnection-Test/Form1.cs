@@ -22,7 +22,7 @@ namespace AQBConnection_Test
          //Password = @"8a0IucJ@Nx1Qy5HfFrX0Ob3m",
          UserID = @"user02",
          Password = @"user02",
-         InitialCatalog = @"Sales"
+         //InitialCatalog = @"Sales"
       };
 
       public Form1()
@@ -45,8 +45,10 @@ namespace AQBConnection_Test
                string name = gc.Name;
                gc.Visible = MetadataPullerXtraUserControl.IsFieldVisibleByDefault(fieldName);
             }
-
          }
+         //   {
+         //      this.aqb
+         //   }
       }
 
       #region --- Event Handlers ---
@@ -55,9 +57,10 @@ namespace AQBConnection_Test
          MetadataPullerXtraUserControl.CreateFirstTableSqlite(this.sqliteCSBuilder.ConnectionString);
          using(ActiveQueryBuilder.Core.SQLContext sqlContext = MetadataPullerXtraUserControl.CreateAqbQbAuto(this.sqliteCSBuilder.ConnectionString))
          {
-            this.dataTable = MetadataPullerXtraUserControl.CreateMetadataItemTable();
+            this.dataTable.Rows.Clear(); // = MetadataPullerXtraUserControl.CreateMetadataItemTable();
             MetadataPullerXtraUserControl.DrillDownAqbSqlContext(sqlContext, this.dataTable, "XPTO");
             this.aqbGridControl.DataSource = this.dataTable;
+            this.aqbPivotGridControl.DataSource = this.dataTable;
          }
       }
 
@@ -66,9 +69,10 @@ namespace AQBConnection_Test
          MetadataPullerXtraUserControl.CreateFirstTableSqlite(this.sqliteCSBuilder.ConnectionString);
          using(ActiveQueryBuilder.Core.SQLContext sqlContext = MetadataPullerXtraUserControl.CreateAqbSqlContext4SQLiteOnline(this.sqliteCSBuilder.ConnectionString))
          {
-            this.dataTable = MetadataPullerXtraUserControl.CreateMetadataItemTable();
+            this.dataTable.Rows.Clear( ); // = MetadataPullerXtraUserControl.CreateMetadataItemTable();
             MetadataPullerXtraUserControl.DrillDownAqbSqlContext(sqlContext, this.dataTable, "XPTO");
             this.aqbGridControl.DataSource = this.dataTable;
+            this.aqbPivotGridControl.DataSource = this.dataTable;
          }
       }
 
@@ -76,14 +80,16 @@ namespace AQBConnection_Test
       {
          using(ActiveQueryBuilder.Core.SQLContext sqlContext = MetadataPullerXtraUserControl.CreateAqbQbMSSS(this.msssCSBuilder.ConnectionString))
          {
-            this.dataTable = MetadataPullerXtraUserControl.CreateMetadataItemTable();
+            this.dataTable.Rows.Clear( ); // = MetadataPullerXtraUserControl.CreateMetadataItemTable();
             MetadataPullerXtraUserControl.DrillDownAqbSqlContext(sqlContext, this.dataTable, "XPTO");
             this.aqbGridControl.DataSource = this.dataTable;
+            this.aqbPivotGridControl.DataSource = this.dataTable;
+            this.aqbPivotGridControl.RetrieveFields();
          }
       }
       #endregion
 
-      private void gridView1_FocusedRowChanged(object sender, DevExpress.XtraGrid.Views.Base.FocusedRowChangedEventArgs e)
+      private void aqbGridView_FocusedRowChanged( object sender, DevExpress.XtraGrid.Views.Base.FocusedRowChangedEventArgs e )
       {
          int dsRowIndex = this.aqbGridView.GetDataSourceRowIndex(e.FocusedRowHandle);
          if(dsRowIndex < 0)
@@ -97,5 +103,33 @@ namespace AQBConnection_Test
          this.propertyGridControl.SelectedObject = null;
          this.propertyGridControl.SelectedObject = MetadataPullerXtraUserControl.CreateMetadataItemProps(row);
       }
+
+      private void tabbedView1_QueryControl(object sender, DevExpress.XtraBars.Docking2010.Views.QueryControlEventArgs e)
+      {
+         if(e.Document == this.aqbGridControlDocument)
+         {
+            e.Control = this.aqbGridControl;
+            return;
+         }
+
+         if(e.Document == this.aqbPivotGridControlDocument)
+         {
+            e.Control = this.aqbPivotGridControl;
+            return;
+         }
+         if( e.Document == this.document1 )
+         {
+            e.Control = this.dashboardViewer1;
+            return;
+         }
+      }
+
+      private void tabbedView1_ControlReleasing( object sender, DevExpress.XtraBars.Docking2010.Views.ControlReleasingEventArgs e )
+      {
+         e.Cancel = true;
+         //or 
+         //e.KeepControl = true; 
+      }
+
    }
 }

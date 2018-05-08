@@ -6,7 +6,7 @@ using DevExpress.UserSkins;
 using DevExpress.Skins;
 using DevExpress.LookAndFeel;
 
-namespace AQBConnection_Test
+namespace DXApplication19
 {
    static class Program
    {
@@ -18,12 +18,10 @@ namespace AQBConnection_Test
       {
          Application.EnableVisualStyles( );
          Application.SetCompatibleTextRenderingDefault( false );
-          
+
          BonusSkins.Register( );
          SkinManager.EnableFormSkins( );
          Application.Run( new Form1( ) );
-        // Application.Run( new DashboardDesignerXtraForm( ) );
-         
       }
    }
 }
