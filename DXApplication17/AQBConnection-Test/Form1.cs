@@ -78,6 +78,7 @@ namespace AQBConnection_Test
 
       private void testAQBMsssAutoConnectionBarButtonItem_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
       {
+         string connectionString = this.msssCSBuilder.ConnectionString;
          using(ActiveQueryBuilder.Core.SQLContext sqlContext = MetadataPullerXtraUserControl.CreateAqbQbMSSS(this.msssCSBuilder.ConnectionString))
          {
             this.dataTable.Rows.Clear( ); // = MetadataPullerXtraUserControl.CreateMetadataItemTable();

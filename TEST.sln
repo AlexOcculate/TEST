@@ -109,6 +109,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DataGridSwapViews", "DataGr
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AQB-Metadata", "DXApplication19\DXApplication19\AQB-Metadata.csproj", "{AE4406DF-F157-4509-B2D7-6F903ABECF29}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DashboardDeisgnerTEST", "DashboardDeisgnerTEST\DashboardDeisgnerTEST.csproj", "{71A30103-E742-4D22-B9C5-45C857CA04C1}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -541,6 +543,14 @@ Global
 		{AE4406DF-F157-4509-B2D7-6F903ABECF29}.Release|Any CPU.Build.0 = Release|Any CPU
 		{AE4406DF-F157-4509-B2D7-6F903ABECF29}.Release|x86.ActiveCfg = Release|Any CPU
 		{AE4406DF-F157-4509-B2D7-6F903ABECF29}.Release|x86.Build.0 = Release|Any CPU
+		{71A30103-E742-4D22-B9C5-45C857CA04C1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{71A30103-E742-4D22-B9C5-45C857CA04C1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{71A30103-E742-4D22-B9C5-45C857CA04C1}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{71A30103-E742-4D22-B9C5-45C857CA04C1}.Debug|x86.Build.0 = Debug|Any CPU
+		{71A30103-E742-4D22-B9C5-45C857CA04C1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{71A30103-E742-4D22-B9C5-45C857CA04C1}.Release|Any CPU.Build.0 = Release|Any CPU
+		{71A30103-E742-4D22-B9C5-45C857CA04C1}.Release|x86.ActiveCfg = Release|Any CPU
+		{71A30103-E742-4D22-B9C5-45C857CA04C1}.Release|x86.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
