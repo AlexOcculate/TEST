@@ -1,0 +1,20 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<dataBaseObjectModel xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" dslVersion="1.0.0.0" Id="ee34ea9d-d649-4d47-9350-74c461326861" namespace="AQBMetadata.ORMDataModel" connectionString="XpoProvider=SQLite;Data Source=D:\Users\user01\source\repos\TEST\DXApplication19\DXApplication19\database\TestDB000.db" dataBaseShemaInfo="H4sIAAAAAAAEAO1WXW+bMBR9n7T/gPJcA+ajhopQbUlXRV23qGmnvhr7krKBibBJsn8/E0ga0nbrVGndQ99yzz03vufaR9zodF3kxhIqmZViOMCmPTiN37+LPlIJM1VWdA4TkZaGZgl5spbZcHCn1OLEslarlblyzbKaW45tY+v28vOM3UFBUSakooLBYFfF/1w10KcaRnRNkxxkc+Qm3iJ7wBb6QguIz0FARfPbxdfkOzCFI+s+t6OfiQaLVVVDZHXBLjnOZAPcLDhVEKc0l5rUB3fc8zrjEx77CU1oaAfoOKSAPMJSRFlKEVCGieOHLvf1f3TkXfGozOtCyJ6SJ2GdaDS0yXgyjqy9sEf7nbi/Fbgvkh07jHsQoMD2U+QxjBElHkE+Zzx0WYgd7D4QqcutF+ic0gqEeg213OMQuDxAtkOIvlLsogADR7YbJGngpA4NH17pC9WOqaKNxTav9d9LTkLXSzFJkOc7PvIgdFDCiIucYwiZo3MkJM+W/BjaefHZXr4ERXW3dKKg2Br6zc9vfn7z8//p5y6+p0Qb9XxalWwDGlYLf2u3i3gMy7P1ogIpzWZW5hIT0zkyuvSwiUxi2kfGqM5VXcFQQK301/3ImNZJnrEL+Hld/gAxTIKAY+J7nNg2eCGNrO0Rm/NGOZUSZHMBV/VuutEHrluDNFt3fbXQrE570BUU5RIOiS16yB3pJSm+EeyOijlwPbMmbkfzWA+RnswCKpW9cm9PtBG1y5TSr7YotG9l90YfwD3yGGQ21z8/ZfopHFT0c3qrtA7WyvgXjVuwMn8KAAA=" generateConnectionHelper="true" generateStoredProcedures="false" fieldNameCase="Unchanged" generateDefaultConstructors="false" useNameOf="true" xmlns="http://schemas.microsoft.com/dsltools/ORMDataModel">
+  <classes>
+    <dataBaseObjectModelHasClasses Id="76f6db50-744d-4589-be1f-8d0f9d202d98">
+      <xpObject Id="5baba908-69ae-47cf-acfa-eac172593d5e" name="MetadataItemXpObject" baseClass="XPObject" userFileName="GeneralXpObject1" designerFileName="GeneralXpObject1.Designer" className="MetadataItemXpObject" virtualName="MetadataItemXpObject">
+        <fields>
+          <generalXpObjectHasFields Id="f7502b73-162d-4a22-966a-f7161c347344">
+            <field Id="c62cd4e8-805f-4c11-a747-5dcd93c91213" name="ID" virtualColumnType="String" delayedUpdateModifiedOnly="false" />
+          </generalXpObjectHasFields>
+          <generalXpObjectHasFields Id="2f2e9dd4-136e-47ef-847d-edb106e82a29">
+            <field Id="d4de83d8-0277-4713-81ed-038bf82f2a9e" name="ParentID" virtualColumnType="String" delayedUpdateModifiedOnly="false" />
+          </generalXpObjectHasFields>
+          <generalXpObjectHasFields Id="46fb82c7-ba4a-44c4-81c3-32bdae07ef0f">
+            <field Id="b934f17b-4525-4e92-bc73-26e9c234f797" name="DataStoreName" virtualColumnType="String" delayedUpdateModifiedOnly="false" />
+          </generalXpObjectHasFields>
+        </fields>
+      </xpObject>
+    </dataBaseObjectModelHasClasses>
+  </classes>
+</dataBaseObjectModel>

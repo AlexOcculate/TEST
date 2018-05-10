@@ -12,8 +12,8 @@ namespace AQBMetadata
 
       public static readonly COL MI_ID = new COL( 0, "ID", typeof( int ) );
       public static readonly COL MI_DATASTORE_NAME = new COL( 1, "DataStoreName", typeof( string ) );
-      public static readonly COL MI_SNAPSHOT_NAME = new COL( 1, "SnapshotName", typeof( string ) );
-      public static readonly COL MI_LAST_WRITE_TIME_UTC = new COL( 1, "LastWriteTimeUTC", typeof( System.DateTime ) );
+      public static readonly COL MI_SNAPSHOT_NAME = new COL( 2, "SnapshotName", typeof( string ) );
+      public static readonly COL MI_LAST_WRITE_TIME_UTC = new COL( 3, "LastWriteTimeUTC", typeof( System.DateTime ) );
 
       /*
 public static DataTable CreateMetadataItemTable( string name = MetadataItem_TblName )
@@ -270,14 +270,24 @@ public static DataTable CreateMetadataItemTable( string name = MetadataItem_TblN
       private readonly int _id;
       private readonly string _name;
       private readonly Type _type;
+      private readonly bool _readonly;
+      //
+      private readonly DataColumn _col;
 
-      private COL( int value, string name, Type type )
+      private COL( int value, string name, Type type, bool read_only=true )
       {
          this._id = value;
          this._name = name;
          this._type = type;
+         this._readonly = read_only;
          dicId[ value ] = this;
          dicName[ name ] = this;
+         this._col = new DataColumn()
+         {
+            ColumnName = this._name,
+            DataType = this._type,
+            ReadOnly = this._readonly
+         };
       }
 
       public static int Count
@@ -297,6 +307,7 @@ public static DataTable CreateMetadataItemTable( string name = MetadataItem_TblN
          get { return this._type; }
       }
 
+      #region --- OPERATORS ---
       public static implicit operator COL( string str )
       {
          COL result;
@@ -313,15 +324,12 @@ public static DataTable CreateMetadataItemTable( string name = MetadataItem_TblN
          else
             throw new InvalidCastException( );
       }
+      #endregion
 
       public override string ToString()
       {
          return this._name;
       }
-
-
-
-
 
       public void lalal()
       {
