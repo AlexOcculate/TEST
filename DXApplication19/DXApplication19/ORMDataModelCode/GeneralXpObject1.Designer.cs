@@ -34,6 +34,232 @@ namespace AQBMetadata.ORMDataModel
          get { return fDataStoreName; }
          set { SetPropertyValue<string>( nameof( DataStoreName ), ref fDataStoreName, value ); }
       }
+      string fSnapshotName;
+      public string SnapshotName
+      {
+         get { return fSnapshotName; }
+         set { SetPropertyValue<string>( nameof( SnapshotName ), ref fSnapshotName, value ); }
+      }
+      DateTime fLastWriteTimeUtc;
+      public DateTime LastWriteTimeUtc
+      {
+         get { return fLastWriteTimeUtc; }
+         set { SetPropertyValue<DateTime>( nameof( LastWriteTimeUtc ), ref fLastWriteTimeUtc, value ); }
+      }
+      string fMetadataProvider;
+      public string MetadataProvider
+      {
+         get { return fMetadataProvider; }
+         set { SetPropertyValue<string>( nameof( MetadataProvider ), ref fMetadataProvider, value ); }
+      }
+      string fSyntaxProvider;
+      [DevExpress.Xpo.DisplayName( @"Syntax Provider" )]
+      public string SyntaxProvider
+      {
+         get { return fSyntaxProvider; }
+         set { SetPropertyValue<string>( nameof( SyntaxProvider ), ref fSyntaxProvider, value ); }
+      }
+      bool fIsSystem;
+      public bool IsSystem
+      {
+         get { return fIsSystem; }
+         set { SetPropertyValue<bool>( nameof( IsSystem ), ref fIsSystem, value ); }
+      }
+      string fServer;
+      public string Server
+      {
+         get { return fServer; }
+         set { SetPropertyValue<string>( nameof( Server ), ref fServer, value ); }
+      }
+      string fDatabase;
+      public string Database
+      {
+         get { return fDatabase; }
+         set { SetPropertyValue<string>( nameof( Database ), ref fDatabase, value ); }
+      }
+      string fSchema;
+      public string Schema
+      {
+         get { return fSchema; }
+         set { SetPropertyValue<string>( nameof( Schema ), ref fSchema, value ); }
+      }
+      string fType;
+      public string Type
+      {
+         get { return fType; }
+         set { SetPropertyValue<string>( nameof( Type ), ref fType, value ); }
+      }
+      string fParentType;
+      public string ParentType
+      {
+         get { return fParentType; }
+         set { SetPropertyValue<string>( nameof( ParentType ), ref fParentType, value ); }
+      }
+      string fObjectName;
+      [DevExpress.Xpo.DisplayName( @"ParentName" )]
+      public string ObjectName
+      {
+         get { return fObjectName; }
+         set { SetPropertyValue<string>( nameof( ObjectName ), ref fObjectName, value ); }
+      }
+      string fNameFullQualified;
+      public string NameFullQualified
+      {
+         get { return fNameFullQualified; }
+         set { SetPropertyValue<string>( nameof( NameFullQualified ), ref fNameFullQualified, value ); }
+      }
+      string fCardinality;
+      [DevExpress.Xpo.DisplayName( @"FkCardinality" )]
+      public string Cardinality
+      {
+         get { return fCardinality; }
+         set { SetPropertyValue<string>( nameof( Cardinality ), ref fCardinality, value ); }
+      }
+      ushort fFieldsCount;
+      [DevExpress.Xpo.DisplayName( @"FkFieldCount" )]
+      public ushort FieldsCount
+      {
+         get { return fFieldsCount; }
+         set { SetPropertyValue<ushort>( nameof( FieldsCount ), ref fFieldsCount, value ); }
+      }
+      string fFkFields;
+      public string FkFields
+      {
+         get { return fFkFields; }
+         set { SetPropertyValue<string>( nameof( FkFields ), ref fFkFields, value ); }
+      }
+      string fReferencedCardinality;
+      [DevExpress.Xpo.DisplayName( @"TkCardinality" )]
+      public string ReferencedCardinality
+      {
+         get { return fReferencedCardinality; }
+         set { SetPropertyValue<string>( nameof( ReferencedCardinality ), ref fReferencedCardinality, value ); }
+      }
+      string fReferencedObject;
+      [DevExpress.Xpo.DisplayName( @"TkObject" )]
+      public string ReferencedObject
+      {
+         get { return fReferencedObject; }
+         set { SetPropertyValue<string>( nameof( ReferencedObject ), ref fReferencedObject, value ); }
+      }
+      string fReferencedObjectName;
+      [DevExpress.Xpo.DisplayName( @"TkObjectName" )]
+      public string ReferencedObjectName
+      {
+         get { return fReferencedObjectName; }
+         set { SetPropertyValue<string>( nameof( ReferencedObjectName ), ref fReferencedObjectName, value ); }
+      }
+      ushort fReferencedFieldsCount;
+      [DevExpress.Xpo.DisplayName( @"TkFieldsCount" )]
+      public ushort ReferencedFieldsCount
+      {
+         get { return fReferencedFieldsCount; }
+         set { SetPropertyValue<ushort>( nameof( ReferencedFieldsCount ), ref fReferencedFieldsCount, value ); }
+      }
+      string fReferencedFields;
+      [DevExpress.Xpo.DisplayName( @"TkFields" )]
+      public string ReferencedFields
+      {
+         get { return fReferencedFields; }
+         set { SetPropertyValue<string>( nameof( ReferencedFields ), ref fReferencedFields, value ); }
+      }
+      string fNameQuoted;
+      public string NameQuoted
+      {
+         get { return fNameQuoted; }
+         set { SetPropertyValue<string>( nameof( NameQuoted ), ref fNameQuoted, value ); }
+      }
+      string fAltName;
+      public string AltName
+      {
+         get { return fAltName; }
+         set { SetPropertyValue<string>( nameof( AltName ), ref fAltName, value ); }
+      }
+      string fName;
+      public string Name
+      {
+         get { return fName; }
+         set { SetPropertyValue<string>( nameof( Name ), ref fName, value ); }
+      }
+      bool fHasDefault;
+      public bool HasDefault
+      {
+         get { return fHasDefault; }
+         set { SetPropertyValue<bool>( nameof( HasDefault ), ref fHasDefault, value ); }
+      }
+      string fExpression;
+      public string Expression
+      {
+         get { return fExpression; }
+         set { SetPropertyValue<string>( nameof( Expression ), ref fExpression, value ); }
+      }
+      string fDotNetDatatype;
+      [DevExpress.Xpo.DisplayName( @".NetFieldType" )]
+      public string DotNetDatatype
+      {
+         get { return fDotNetDatatype; }
+         set { SetPropertyValue<string>( nameof( DotNetDatatype ), ref fDotNetDatatype, value ); }
+      }
+      string fDatabaseDatatype;
+      public string DatabaseDatatype
+      {
+         get { return fDatabaseDatatype; }
+         set { SetPropertyValue<string>( nameof( DatabaseDatatype ), ref fDatabaseDatatype, value ); }
+      }
+      bool fIsNullable;
+      public bool IsNullable
+      {
+         get { return fIsNullable; }
+         set { SetPropertyValue<bool>( nameof( IsNullable ), ref fIsNullable, value ); }
+      }
+      ushort fPrecision;
+      public ushort Precision
+      {
+         get { return fPrecision; }
+         set { SetPropertyValue<ushort>( nameof( Precision ), ref fPrecision, value ); }
+      }
+      ushort fScale;
+      public ushort Scale
+      {
+         get { return fScale; }
+         set { SetPropertyValue<ushort>( nameof( Scale ), ref fScale, value ); }
+      }
+      ulong fSize;
+      public ulong Size
+      {
+         get { return fSize; }
+         set { SetPropertyValue<ulong>( nameof( Size ), ref fSize, value ); }
+      }
+      bool fIsPK;
+      public bool IsPK
+      {
+         get { return fIsPK; }
+         set { SetPropertyValue<bool>( nameof( IsPK ), ref fIsPK, value ); }
+      }
+      bool fIsRO;
+      public bool IsRO
+      {
+         get { return fIsRO; }
+         set { SetPropertyValue<bool>( nameof( IsRO ), ref fIsRO, value ); }
+      }
+      string fDescription;
+      public string Description
+      {
+         get { return fDescription; }
+         set { SetPropertyValue<string>( nameof( Description ), ref fDescription, value ); }
+      }
+      string fTag;
+      public string Tag
+      {
+         get { return fTag; }
+         set { SetPropertyValue<string>( nameof( Tag ), ref fTag, value ); }
+      }
+      string fUserData;
+      public string UserData
+      {
+         get { return fUserData; }
+         set { SetPropertyValue<string>( nameof( UserData ), ref fUserData, value ); }
+      }
    }
 
 }

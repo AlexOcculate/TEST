@@ -42,9 +42,45 @@
          this.gridControl1 = new DevExpress.XtraGrid.GridControl();
          this.gridView1 = new DevExpress.XtraGrid.Views.Grid.GridView();
          this.colOid = new DevExpress.XtraGrid.Columns.GridColumn();
-         this.colID = new DevExpress.XtraGrid.Columns.GridColumn();
+         this.colID = new DevExpress.XtraGrid.Columns.GridColumn();  
          this.colParentID = new DevExpress.XtraGrid.Columns.GridColumn();
          this.colDataStoreName = new DevExpress.XtraGrid.Columns.GridColumn();
+         this.colSnapshotName = new DevExpress.XtraGrid.Columns.GridColumn();
+         this.colLastWriteTimeUtc = new DevExpress.XtraGrid.Columns.GridColumn();
+         this.colMetadataProvider = new DevExpress.XtraGrid.Columns.GridColumn();
+         this.colSyntaxProvider = new DevExpress.XtraGrid.Columns.GridColumn();
+         this.colIsSystem = new DevExpress.XtraGrid.Columns.GridColumn();
+         this.colServer = new DevExpress.XtraGrid.Columns.GridColumn();
+         this.colDatabase = new DevExpress.XtraGrid.Columns.GridColumn();
+         this.colSchema = new DevExpress.XtraGrid.Columns.GridColumn();
+         this.colType = new DevExpress.XtraGrid.Columns.GridColumn();
+         this.colParentType = new DevExpress.XtraGrid.Columns.GridColumn();
+         this.colObjectName = new DevExpress.XtraGrid.Columns.GridColumn();
+         this.colNameFullQualified = new DevExpress.XtraGrid.Columns.GridColumn();
+         this.colCardinality = new DevExpress.XtraGrid.Columns.GridColumn();
+         this.colFieldsCount = new DevExpress.XtraGrid.Columns.GridColumn();
+         this.colFkFields = new DevExpress.XtraGrid.Columns.GridColumn();
+         this.colReferencedCardinality = new DevExpress.XtraGrid.Columns.GridColumn();
+         this.colReferencedObject = new DevExpress.XtraGrid.Columns.GridColumn();
+         this.colReferencedObjectName = new DevExpress.XtraGrid.Columns.GridColumn();
+         this.colReferencedFieldsCount = new DevExpress.XtraGrid.Columns.GridColumn();
+         this.colReferencedFields = new DevExpress.XtraGrid.Columns.GridColumn();
+         this.colNameQuoted = new DevExpress.XtraGrid.Columns.GridColumn();
+         this.colAltName = new DevExpress.XtraGrid.Columns.GridColumn();
+         this.colName = new DevExpress.XtraGrid.Columns.GridColumn();
+         this.colHasDefault = new DevExpress.XtraGrid.Columns.GridColumn();
+         this.colExpression = new DevExpress.XtraGrid.Columns.GridColumn();
+         this.colDotNetDatatype = new DevExpress.XtraGrid.Columns.GridColumn();
+         this.colDatabaseDatatype = new DevExpress.XtraGrid.Columns.GridColumn();
+         this.colIsNullable = new DevExpress.XtraGrid.Columns.GridColumn();
+         this.colPrecision = new DevExpress.XtraGrid.Columns.GridColumn();
+         this.colScale = new DevExpress.XtraGrid.Columns.GridColumn();
+         this.colSize = new DevExpress.XtraGrid.Columns.GridColumn();
+         this.colIsPK = new DevExpress.XtraGrid.Columns.GridColumn();
+         this.colIsRO = new DevExpress.XtraGrid.Columns.GridColumn();
+         this.colDescription = new DevExpress.XtraGrid.Columns.GridColumn();
+         this.colTag = new DevExpress.XtraGrid.Columns.GridColumn();
+         this.colUserData = new DevExpress.XtraGrid.Columns.GridColumn();
          ((System.ComponentModel.ISupportInitialize)(this.barManager1)).BeginInit();
          ((System.ComponentModel.ISupportInitialize)(this.xpCollection1)).BeginInit();
          ((System.ComponentModel.ISupportInitialize)(this.session1)).BeginInit();
@@ -131,7 +167,7 @@
          // 
          // xpCollection1
          // 
-         this.xpCollection1.ObjectType = typeof(AQBMetadata.ORMDataModel.MetadataItemXpObject );
+         this.xpCollection1.ObjectType = typeof(AQBMetadata.ORMDataModel.MetadataItemXpObject);
          this.xpCollection1.Session = this.session1;
          // 
          // session1
@@ -158,7 +194,43 @@
             this.colOid,
             this.colID,
             this.colParentID,
-            this.colDataStoreName});
+            this.colDataStoreName,
+            this.colSnapshotName,
+            this.colLastWriteTimeUtc,
+            this.colMetadataProvider,
+            this.colSyntaxProvider,
+            this.colIsSystem,
+            this.colServer,
+            this.colDatabase,
+            this.colSchema,
+            this.colType,
+            this.colParentType,
+            this.colObjectName,
+            this.colNameFullQualified,
+            this.colCardinality,
+            this.colFieldsCount,
+            this.colFkFields,
+            this.colReferencedCardinality,
+            this.colReferencedObject,
+            this.colReferencedObjectName,
+            this.colReferencedFieldsCount,
+            this.colReferencedFields,
+            this.colNameQuoted,
+            this.colAltName,
+            this.colName,
+            this.colHasDefault,
+            this.colExpression,
+            this.colDotNetDatatype,
+            this.colDatabaseDatatype,
+            this.colIsNullable,
+            this.colPrecision,
+            this.colScale,
+            this.colSize,
+            this.colIsPK,
+            this.colIsRO,
+            this.colDescription,
+            this.colTag,
+            this.colUserData});
          this.gridView1.GridControl = this.gridControl1;
          this.gridView1.Name = "gridView1";
          this.gridView1.OptionsDetail.ShowEmbeddedDetailIndent = DevExpress.Utils.DefaultBoolean.True;
@@ -191,6 +263,258 @@
          this.colDataStoreName.Name = "colDataStoreName";
          this.colDataStoreName.Visible = true;
          this.colDataStoreName.VisibleIndex = 3;
+         // 
+         // colSnapshotName
+         // 
+         this.colSnapshotName.FieldName = "SnapshotName";
+         this.colSnapshotName.Name = "colSnapshotName";
+         this.colSnapshotName.Visible = true;
+         this.colSnapshotName.VisibleIndex = 4;
+         // 
+         // colLastWriteTimeUtc
+         // 
+         this.colLastWriteTimeUtc.FieldName = "LastWriteTimeUtc";
+         this.colLastWriteTimeUtc.Name = "colLastWriteTimeUtc";
+         this.colLastWriteTimeUtc.Visible = true;
+         this.colLastWriteTimeUtc.VisibleIndex = 5;
+         // 
+         // colMetadataProvider
+         // 
+         this.colMetadataProvider.FieldName = "MetadataProvider";
+         this.colMetadataProvider.Name = "colMetadataProvider";
+         this.colMetadataProvider.Visible = true;
+         this.colMetadataProvider.VisibleIndex = 6;
+         // 
+         // colSyntaxProvider
+         // 
+         this.colSyntaxProvider.FieldName = "SyntaxProvider";
+         this.colSyntaxProvider.Name = "colSyntaxProvider";
+         this.colSyntaxProvider.Visible = true;
+         this.colSyntaxProvider.VisibleIndex = 7;
+         // 
+         // colIsSystem
+         // 
+         this.colIsSystem.FieldName = "IsSystem";
+         this.colIsSystem.Name = "colIsSystem";
+         this.colIsSystem.Visible = true;
+         this.colIsSystem.VisibleIndex = 8;
+         // 
+         // colServer
+         // 
+         this.colServer.FieldName = "Server";
+         this.colServer.Name = "colServer";
+         this.colServer.Visible = true;
+         this.colServer.VisibleIndex = 9;
+         // 
+         // colDatabase
+         // 
+         this.colDatabase.FieldName = "Database";
+         this.colDatabase.Name = "colDatabase";
+         this.colDatabase.Visible = true;
+         this.colDatabase.VisibleIndex = 10;
+         // 
+         // colSchema
+         // 
+         this.colSchema.FieldName = "Schema";
+         this.colSchema.Name = "colSchema";
+         this.colSchema.Visible = true;
+         this.colSchema.VisibleIndex = 11;
+         // 
+         // colType
+         // 
+         this.colType.FieldName = "Type";
+         this.colType.Name = "colType";
+         this.colType.Visible = true;
+         this.colType.VisibleIndex = 12;
+         // 
+         // colParentType
+         // 
+         this.colParentType.FieldName = "ParentType";
+         this.colParentType.Name = "colParentType";
+         this.colParentType.Visible = true;
+         this.colParentType.VisibleIndex = 13;
+         // 
+         // colObjectName
+         // 
+         this.colObjectName.FieldName = "ObjectName";
+         this.colObjectName.Name = "colObjectName";
+         this.colObjectName.Visible = true;
+         this.colObjectName.VisibleIndex = 14;
+         // 
+         // colNameFullQualified
+         // 
+         this.colNameFullQualified.FieldName = "NameFullQualified";
+         this.colNameFullQualified.Name = "colNameFullQualified";
+         this.colNameFullQualified.Visible = true;
+         this.colNameFullQualified.VisibleIndex = 15;
+         // 
+         // colCardinality
+         // 
+         this.colCardinality.FieldName = "Cardinality";
+         this.colCardinality.Name = "colCardinality";
+         this.colCardinality.Visible = true;
+         this.colCardinality.VisibleIndex = 16;
+         // 
+         // colFieldsCount
+         // 
+         this.colFieldsCount.FieldName = "FieldsCount";
+         this.colFieldsCount.Name = "colFieldsCount";
+         this.colFieldsCount.Visible = true;
+         this.colFieldsCount.VisibleIndex = 17;
+         // 
+         // colFkFields
+         // 
+         this.colFkFields.FieldName = "FkFields";
+         this.colFkFields.Name = "colFkFields";
+         this.colFkFields.Visible = true;
+         this.colFkFields.VisibleIndex = 18;
+         // 
+         // colReferencedCardinality
+         // 
+         this.colReferencedCardinality.FieldName = "ReferencedCardinality";
+         this.colReferencedCardinality.Name = "colReferencedCardinality";
+         this.colReferencedCardinality.Visible = true;
+         this.colReferencedCardinality.VisibleIndex = 19;
+         // 
+         // colReferencedObject
+         // 
+         this.colReferencedObject.FieldName = "ReferencedObject";
+         this.colReferencedObject.Name = "colReferencedObject";
+         this.colReferencedObject.Visible = true;
+         this.colReferencedObject.VisibleIndex = 20;
+         // 
+         // colReferencedObjectName
+         // 
+         this.colReferencedObjectName.FieldName = "ReferencedObjectName";
+         this.colReferencedObjectName.Name = "colReferencedObjectName";
+         this.colReferencedObjectName.Visible = true;
+         this.colReferencedObjectName.VisibleIndex = 21;
+         // 
+         // colReferencedFieldsCount
+         // 
+         this.colReferencedFieldsCount.FieldName = "ReferencedFieldsCount";
+         this.colReferencedFieldsCount.Name = "colReferencedFieldsCount";
+         this.colReferencedFieldsCount.Visible = true;
+         this.colReferencedFieldsCount.VisibleIndex = 22;
+         // 
+         // colReferencedFields
+         // 
+         this.colReferencedFields.FieldName = "ReferencedFields";
+         this.colReferencedFields.Name = "colReferencedFields";
+         this.colReferencedFields.Visible = true;
+         this.colReferencedFields.VisibleIndex = 23;
+         // 
+         // colNameQuoted
+         // 
+         this.colNameQuoted.FieldName = "NameQuoted";
+         this.colNameQuoted.Name = "colNameQuoted";
+         this.colNameQuoted.Visible = true;
+         this.colNameQuoted.VisibleIndex = 24;
+         // 
+         // colAltName
+         // 
+         this.colAltName.FieldName = "AltName";
+         this.colAltName.Name = "colAltName";
+         this.colAltName.Visible = true;
+         this.colAltName.VisibleIndex = 25;
+         // 
+         // colName
+         // 
+         this.colName.FieldName = "Name";
+         this.colName.Name = "colName";
+         this.colName.Visible = true;
+         this.colName.VisibleIndex = 26;
+         // 
+         // colHasDefault
+         // 
+         this.colHasDefault.FieldName = "HasDefault";
+         this.colHasDefault.Name = "colHasDefault";
+         this.colHasDefault.Visible = true;
+         this.colHasDefault.VisibleIndex = 27;
+         // 
+         // colExpression
+         // 
+         this.colExpression.FieldName = "Expression";
+         this.colExpression.Name = "colExpression";
+         this.colExpression.Visible = true;
+         this.colExpression.VisibleIndex = 28;
+         // 
+         // colDotNetDatatype
+         // 
+         this.colDotNetDatatype.FieldName = "DotNetDatatype";
+         this.colDotNetDatatype.Name = "colDotNetDatatype";
+         this.colDotNetDatatype.Visible = true;
+         this.colDotNetDatatype.VisibleIndex = 29;
+         // 
+         // colDatabaseDatatype
+         // 
+         this.colDatabaseDatatype.FieldName = "DatabaseDatatype";
+         this.colDatabaseDatatype.Name = "colDatabaseDatatype";
+         this.colDatabaseDatatype.Visible = true;
+         this.colDatabaseDatatype.VisibleIndex = 30;
+         // 
+         // colIsNullable
+         // 
+         this.colIsNullable.FieldName = "IsNullable";
+         this.colIsNullable.Name = "colIsNullable";
+         this.colIsNullable.Visible = true;
+         this.colIsNullable.VisibleIndex = 31;
+         // 
+         // colPrecision
+         // 
+         this.colPrecision.FieldName = "Precision";
+         this.colPrecision.Name = "colPrecision";
+         this.colPrecision.Visible = true;
+         this.colPrecision.VisibleIndex = 32;
+         // 
+         // colScale
+         // 
+         this.colScale.FieldName = "Scale";
+         this.colScale.Name = "colScale";
+         this.colScale.Visible = true;
+         this.colScale.VisibleIndex = 33;
+         // 
+         // colSize
+         // 
+         this.colSize.FieldName = "Size";
+         this.colSize.Name = "colSize";
+         this.colSize.Visible = true;
+         this.colSize.VisibleIndex = 34;
+         // 
+         // colIsPK
+         // 
+         this.colIsPK.FieldName = "IsPK";
+         this.colIsPK.Name = "colIsPK";
+         this.colIsPK.Visible = true;
+         this.colIsPK.VisibleIndex = 35;
+         // 
+         // colIsRO
+         // 
+         this.colIsRO.FieldName = "IsRO";
+         this.colIsRO.Name = "colIsRO";
+         this.colIsRO.Visible = true;
+         this.colIsRO.VisibleIndex = 36;
+         // 
+         // colDescription
+         // 
+         this.colDescription.FieldName = "Description";
+         this.colDescription.Name = "colDescription";
+         this.colDescription.Visible = true;
+         this.colDescription.VisibleIndex = 37;
+         // 
+         // colTag
+         // 
+         this.colTag.FieldName = "Tag";
+         this.colTag.Name = "colTag";
+         this.colTag.Visible = true;
+         this.colTag.VisibleIndex = 38;
+         // 
+         // colUserData
+         // 
+         this.colUserData.FieldName = "UserData";
+         this.colUserData.Name = "colUserData";
+         this.colUserData.Visible = true;
+         this.colUserData.VisibleIndex = 39;
          // 
          // Form1
          // 
@@ -233,6 +557,42 @@
       private DevExpress.XtraGrid.Columns.GridColumn colID;
       private DevExpress.XtraGrid.Columns.GridColumn colParentID;
       private DevExpress.XtraGrid.Columns.GridColumn colDataStoreName;
+      private DevExpress.XtraGrid.Columns.GridColumn colSnapshotName;
+      private DevExpress.XtraGrid.Columns.GridColumn colLastWriteTimeUtc;
+      private DevExpress.XtraGrid.Columns.GridColumn colMetadataProvider;
+      private DevExpress.XtraGrid.Columns.GridColumn colSyntaxProvider;
+      private DevExpress.XtraGrid.Columns.GridColumn colIsSystem;
+      private DevExpress.XtraGrid.Columns.GridColumn colServer;
+      private DevExpress.XtraGrid.Columns.GridColumn colDatabase;
+      private DevExpress.XtraGrid.Columns.GridColumn colSchema;
+      private DevExpress.XtraGrid.Columns.GridColumn colType;
+      private DevExpress.XtraGrid.Columns.GridColumn colParentType;
+      private DevExpress.XtraGrid.Columns.GridColumn colObjectName;
+      private DevExpress.XtraGrid.Columns.GridColumn colNameFullQualified;
+      private DevExpress.XtraGrid.Columns.GridColumn colCardinality;
+      private DevExpress.XtraGrid.Columns.GridColumn colFieldsCount;
+      private DevExpress.XtraGrid.Columns.GridColumn colFkFields;
+      private DevExpress.XtraGrid.Columns.GridColumn colReferencedCardinality;
+      private DevExpress.XtraGrid.Columns.GridColumn colReferencedObject;
+      private DevExpress.XtraGrid.Columns.GridColumn colReferencedObjectName;
+      private DevExpress.XtraGrid.Columns.GridColumn colReferencedFieldsCount;
+      private DevExpress.XtraGrid.Columns.GridColumn colReferencedFields;
+      private DevExpress.XtraGrid.Columns.GridColumn colNameQuoted;
+      private DevExpress.XtraGrid.Columns.GridColumn colAltName;
+      private DevExpress.XtraGrid.Columns.GridColumn colName;
+      private DevExpress.XtraGrid.Columns.GridColumn colHasDefault;
+      private DevExpress.XtraGrid.Columns.GridColumn colExpression;
+      private DevExpress.XtraGrid.Columns.GridColumn colDotNetDatatype;
+      private DevExpress.XtraGrid.Columns.GridColumn colDatabaseDatatype;
+      private DevExpress.XtraGrid.Columns.GridColumn colIsNullable;
+      private DevExpress.XtraGrid.Columns.GridColumn colPrecision;
+      private DevExpress.XtraGrid.Columns.GridColumn colScale;
+      private DevExpress.XtraGrid.Columns.GridColumn colSize;
+      private DevExpress.XtraGrid.Columns.GridColumn colIsPK;
+      private DevExpress.XtraGrid.Columns.GridColumn colIsRO;
+      private DevExpress.XtraGrid.Columns.GridColumn colDescription;
+      private DevExpress.XtraGrid.Columns.GridColumn colTag;
+      private DevExpress.XtraGrid.Columns.GridColumn colUserData;
    }
 }
 

@@ -121,7 +121,7 @@ namespace AQBConnection_Test.Model
 
       #region --- LAST WRITE TIME UTC ---
       public const string LASTWRITETIMEUTC_FIELDNAME = "LastWriteTimeUtc";
-      public const string LASTWRITETIMEUTC_DISPLAYNAME = "Las tWrite Time UTC";
+      public const string LASTWRITETIMEUTC_DISPLAYNAME = "Last tWrite Time UTC";
       public const string LASTWRITETIMEUTC_DESCRIPTION = null;
       public const string LASTWRITETIMEUTC_CATEGORY = ID_CATEGORY;
       public const string LASTWRITETIMEUTC_XMLNAME = "ss";
