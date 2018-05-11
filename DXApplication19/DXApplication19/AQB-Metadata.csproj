@@ -61,6 +61,7 @@
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Configuration" />
     <Reference Include="System.Core" />
     <Reference Include="System.Data.SQLite, Version=1.0.108.0, Culture=neutral, PublicKeyToken=db937bc2d44ff139, processorArchitecture=MSIL">
       <HintPath>..\..\packages\System.Data.SQLite.Core.1.0.108.0\lib\net46\System.Data.SQLite.dll</HintPath>
@@ -88,6 +89,10 @@
     <Compile Include="Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
+    <Compile Include="MdItem.cs" />
+    <Compile Include="MetadataItem.cs">
+      <DependentUpon>MetadataItem.xsd</DependentUpon>
+    </Compile>
     <Compile Include="MetadataItem.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -100,6 +105,7 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="SysConnectionString.cs" />
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
     </EmbeddedResource>
@@ -115,6 +121,9 @@
       <DesignTime>True</DesignTime>
     </Compile>
     <None Include="app.config" />
+    <None Include="connections.config">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
     <None Include="MetadataItem.xsc">
       <DependentUpon>MetadataItem.xsd</DependentUpon>
     </None>
@@ -126,7 +135,9 @@
     <None Include="MetadataItem.xss">
       <DependentUpon>MetadataItem.xsd</DependentUpon>
     </None>
-    <None Include="ORMDataModel.xpo" />
+    <None Include="ORMDataModel.xpo">
+      <SubType>Designer</SubType>
+    </None>
     <None Include="ORMDataModel.xpo.diagram">
       <DependentUpon>ORMDataModel.xpo</DependentUpon>
     </None>

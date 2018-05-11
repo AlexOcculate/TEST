@@ -42,7 +42,7 @@
          this.gridControl1 = new DevExpress.XtraGrid.GridControl();
          this.gridView1 = new DevExpress.XtraGrid.Views.Grid.GridView();
          this.colOid = new DevExpress.XtraGrid.Columns.GridColumn();
-         this.colID = new DevExpress.XtraGrid.Columns.GridColumn();  
+         this.colID = new DevExpress.XtraGrid.Columns.GridColumn();
          this.colParentID = new DevExpress.XtraGrid.Columns.GridColumn();
          this.colDataStoreName = new DevExpress.XtraGrid.Columns.GridColumn();
          this.colSnapshotName = new DevExpress.XtraGrid.Columns.GridColumn();
@@ -57,11 +57,11 @@
          this.colParentType = new DevExpress.XtraGrid.Columns.GridColumn();
          this.colObjectName = new DevExpress.XtraGrid.Columns.GridColumn();
          this.colNameFullQualified = new DevExpress.XtraGrid.Columns.GridColumn();
-         this.colCardinality = new DevExpress.XtraGrid.Columns.GridColumn();
+         this.colFkCardinality = new DevExpress.XtraGrid.Columns.GridColumn();
          this.colFieldsCount = new DevExpress.XtraGrid.Columns.GridColumn();
          this.colFkFields = new DevExpress.XtraGrid.Columns.GridColumn();
-         this.colReferencedCardinality = new DevExpress.XtraGrid.Columns.GridColumn();
-         this.colReferencedObject = new DevExpress.XtraGrid.Columns.GridColumn();
+         this.colTkCardinality = new DevExpress.XtraGrid.Columns.GridColumn();
+         this.colTkObject = new DevExpress.XtraGrid.Columns.GridColumn();
          this.colReferencedObjectName = new DevExpress.XtraGrid.Columns.GridColumn();
          this.colReferencedFieldsCount = new DevExpress.XtraGrid.Columns.GridColumn();
          this.colReferencedFields = new DevExpress.XtraGrid.Columns.GridColumn();
@@ -81,6 +81,7 @@
          this.colDescription = new DevExpress.XtraGrid.Columns.GridColumn();
          this.colTag = new DevExpress.XtraGrid.Columns.GridColumn();
          this.colUserData = new DevExpress.XtraGrid.Columns.GridColumn();
+         this.colCount = new DevExpress.XtraGrid.Columns.GridColumn();
          ((System.ComponentModel.ISupportInitialize)(this.barManager1)).BeginInit();
          ((System.ComponentModel.ISupportInitialize)(this.xpCollection1)).BeginInit();
          ((System.ComponentModel.ISupportInitialize)(this.session1)).BeginInit();
@@ -207,11 +208,11 @@
             this.colParentType,
             this.colObjectName,
             this.colNameFullQualified,
-            this.colCardinality,
+            this.colFkCardinality,
             this.colFieldsCount,
             this.colFkFields,
-            this.colReferencedCardinality,
-            this.colReferencedObject,
+            this.colTkCardinality,
+            this.colTkObject,
             this.colReferencedObjectName,
             this.colReferencedFieldsCount,
             this.colReferencedFields,
@@ -230,7 +231,8 @@
             this.colIsRO,
             this.colDescription,
             this.colTag,
-            this.colUserData});
+            this.colUserData,
+            this.colCount});
          this.gridView1.GridControl = this.gridControl1;
          this.gridView1.Name = "gridView1";
          this.gridView1.OptionsDetail.ShowEmbeddedDetailIndent = DevExpress.Utils.DefaultBoolean.True;
@@ -348,12 +350,12 @@
          this.colNameFullQualified.Visible = true;
          this.colNameFullQualified.VisibleIndex = 15;
          // 
-         // colCardinality
+         // colFkCardinality
          // 
-         this.colCardinality.FieldName = "Cardinality";
-         this.colCardinality.Name = "colCardinality";
-         this.colCardinality.Visible = true;
-         this.colCardinality.VisibleIndex = 16;
+         this.colFkCardinality.FieldName = "FkCardinality";
+         this.colFkCardinality.Name = "colFkCardinality";
+         this.colFkCardinality.Visible = true;
+         this.colFkCardinality.VisibleIndex = 16;
          // 
          // colFieldsCount
          // 
@@ -369,19 +371,19 @@
          this.colFkFields.Visible = true;
          this.colFkFields.VisibleIndex = 18;
          // 
-         // colReferencedCardinality
+         // colTkCardinality
          // 
-         this.colReferencedCardinality.FieldName = "ReferencedCardinality";
-         this.colReferencedCardinality.Name = "colReferencedCardinality";
-         this.colReferencedCardinality.Visible = true;
-         this.colReferencedCardinality.VisibleIndex = 19;
+         this.colTkCardinality.FieldName = "TkCardinality";
+         this.colTkCardinality.Name = "colTkCardinality";
+         this.colTkCardinality.Visible = true;
+         this.colTkCardinality.VisibleIndex = 19;
          // 
-         // colReferencedObject
+         // colTkObject
          // 
-         this.colReferencedObject.FieldName = "ReferencedObject";
-         this.colReferencedObject.Name = "colReferencedObject";
-         this.colReferencedObject.Visible = true;
-         this.colReferencedObject.VisibleIndex = 20;
+         this.colTkObject.FieldName = "TkObject";
+         this.colTkObject.Name = "colTkObject";
+         this.colTkObject.Visible = true;
+         this.colTkObject.VisibleIndex = 20;
          // 
          // colReferencedObjectName
          // 
@@ -516,6 +518,13 @@
          this.colUserData.Visible = true;
          this.colUserData.VisibleIndex = 39;
          // 
+         // colCount
+         // 
+         this.colCount.FieldName = "Count";
+         this.colCount.Name = "colCount";
+         this.colCount.Visible = true;
+         this.colCount.VisibleIndex = 40;
+         // 
          // Form1
          // 
          this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -569,11 +578,11 @@
       private DevExpress.XtraGrid.Columns.GridColumn colParentType;
       private DevExpress.XtraGrid.Columns.GridColumn colObjectName;
       private DevExpress.XtraGrid.Columns.GridColumn colNameFullQualified;
-      private DevExpress.XtraGrid.Columns.GridColumn colCardinality;
+      private DevExpress.XtraGrid.Columns.GridColumn colFkCardinality;
       private DevExpress.XtraGrid.Columns.GridColumn colFieldsCount;
       private DevExpress.XtraGrid.Columns.GridColumn colFkFields;
-      private DevExpress.XtraGrid.Columns.GridColumn colReferencedCardinality;
-      private DevExpress.XtraGrid.Columns.GridColumn colReferencedObject;
+      private DevExpress.XtraGrid.Columns.GridColumn colTkCardinality;
+      private DevExpress.XtraGrid.Columns.GridColumn colTkObject;
       private DevExpress.XtraGrid.Columns.GridColumn colReferencedObjectName;
       private DevExpress.XtraGrid.Columns.GridColumn colReferencedFieldsCount;
       private DevExpress.XtraGrid.Columns.GridColumn colReferencedFields;
@@ -593,6 +602,7 @@
       private DevExpress.XtraGrid.Columns.GridColumn colDescription;
       private DevExpress.XtraGrid.Columns.GridColumn colTag;
       private DevExpress.XtraGrid.Columns.GridColumn colUserData;
+      private DevExpress.XtraGrid.Columns.GridColumn colCount;
    }
 }
 

@@ -332,7 +332,6 @@ namespace GridCardAndLayoutView
          return t;
       }
       #endregion
-
       public static bool IsFieldVisibleByDefault( string fieldName )
       {
          switch( fieldName )

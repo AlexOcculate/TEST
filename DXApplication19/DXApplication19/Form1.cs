@@ -1,6 +1,10 @@
 ﻿using AQBMetadata;
 using AQBMetadata.ORMDataModel;
+using DataPhilosophiae.Model;
 using System;
+using System.Collections.Generic;
+using System.Configuration;
+using System.Data;
 using System.Data.SqlClient;
 using System.Data.SQLite;
 using System.Linq;
@@ -25,447 +29,80 @@ namespace DXApplication19
 
       public Form1()
       {
-         this.InitializeComponent();
+         this.InitializeComponent( );
       }
 
-      private void Form1_Load(object sender, EventArgs e)
+      private void Form1_Load( object sender, EventArgs e )
       {
+
+         //## @#$% TIMESTAMP + 
+         Dictionary<string, SysConnectionString> sysCSList = AQBMetadata.MdItem.GetSysConnectionStringList( );
          // Cross-Platform Core Libraries > DevExpress ORM Tool > Getting Started > Tutorial 1 - Your First Data-Aware Application with XPO
-         if( this.xpCollection1.Count == 0)
+         //if( this.xpCollection1.Count == 0 )
          {
-            int i = 0;
+            //string cs01 = this.msssCSBuilder.ConnectionString;
+            //string cs02 = this.sqliteCSBuilder.ConnectionString;
+
+            ActiveQueryBuilder.Core.SQLContext sQLContext = AQBMetadata.MdItem.CreateAqbQbMSSS( sysCSList[ "MSSQL" ].ConnectionString );
+            //ActiveQueryBuilder.Core.SQLContext sQLContext = AQBMetadata.MdItem.CreateAqbSqlContext4SQLiteOnline( ConnectionHelper.ConnectionString );
+            //ActiveQueryBuilder.Core.SQLContext sQLContext = CreateAqbSqlContext4SQLiteOnline( this.sqliteCSBuilder.ConnectionString );
+            System.Data.DataTable dataTable = AQBMetadata.MdItem.CreateMetadataItemTable( );
+            AQBMetadata.MdItem.DrillDownAqbSqlContext( sQLContext, dataTable, "alex" );
+            f( dataTable );
+         }
+      }
+      private void f( DataTable dataTable )
+      {
+         foreach( DataRow r in dataTable.Rows )
+         {
+            MetadataItemXpObject o = new MetadataItemXpObject( this.session1 );
             {
-               MetadataItemXpObject o = new MetadataItemXpObject( this.session1 );
-               o.ID = i++.ToString();
-               o.ParentID = "0";
-               o.DataStoreName = $"DS.{o.ParentID}.{o.ID}";
-               o.Save( );
-               this.xpCollection1.Add( o );
-            }
-            {
-               MetadataItemXpObject o = new MetadataItemXpObject( this.session1 );
-               o.ID = i++.ToString( );
-               o.ParentID = "0";
-               o.DataStoreName = $"DS.{o.ParentID}.{o.ID}";
-               o.Save( );
-               this.xpCollection1.Add( o );
-            }
-         }
-         string connectionString = ConnectionHelper.ConnectionString;
-         string x = @"Data Source=D:\Users\user01\source\repos\TEST\DXApplication19\DXApplication19\database\TestDB000.db";
-         string y = this.sqliteCSBuilder.ConnectionString;
-         ActiveQueryBuilder.Core.SQLContext sQLContext = CreateAqbSqlContext4SQLiteOnline( y );
-      }
-
-      #region --- Active Query Builder ---
-      public static bool TestAqbSqlContext4SQLiteConnection( string cs )
-      {
-         ActiveQueryBuilder.Core.SQLContext sc = new ActiveQueryBuilder.Core.SQLContext( )
-         {
-            SyntaxProvider = new ActiveQueryBuilder.Core.SQLiteSyntaxProvider( ),
-            MetadataProvider = new ActiveQueryBuilder.Core.SQLiteMetadataProvider( )
-            {
-               Connection = new System.Data.SQLite.SQLiteConnection( )
-               {
-                  ConnectionString = cs
-               }
-            }
-         };
-         {
-            // sc.MetadataContainer.LoadingOptions.OfflineMode = false;
-            // sc.MetadataContainer.LoadingOptions.LoadSystemObjects = false;
-            // sc.MetadataContainer.LoadingOptions.LoadDefaultDatabaseOnly = true;
-            sc.LoadingOptions.OfflineMode = false;
-            sc.LoadingOptions.LoadSystemObjects = false;
-            sc.LoadingOptions.LoadDefaultDatabaseOnly = true;
-            sc.MetadataContainer.LoadAll( false );
-         }
-         ActiveQueryBuilder.Core.MetadataList items = sc.MetadataContainer.Items;
-         return items == null ? false : true;
-      }
-
-      public static ActiveQueryBuilder.Core.SQLContext CreateAqbSqlContext4SQLiteOffline( string filepath )
-      {
-         ActiveQueryBuilder.Core.SQLContext sc = new ActiveQueryBuilder.Core.SQLContext( )
-         {
-            SyntaxProvider = new ActiveQueryBuilder.Core.SQLiteSyntaxProvider( ),
-            //MetadataProvider = new ActiveQueryBuilder.Core.SQLiteMetadataProvider( )
-            //{
-            //   Connection = new System.Data.SQLite.SQLiteConnection( )
-            //   {
-            //      ConnectionString = cs.ConnectionString
-            //   }
-            //}
-         };
-         {
-            sc.MetadataContainer.LoadingOptions.OfflineMode = true;
-            sc.MetadataContainer.ImportFromXML( filepath );
-         }
-         return sc;
-      }
-
-      #region --- SQLite Handle and AQB-QB ---
-      public static ActiveQueryBuilder.Core.SQLContext CreateAqbSqlContext4SQLiteOnline( string cs )
-      {
-         ActiveQueryBuilder.Core.SQLContext sc = new ActiveQueryBuilder.Core.SQLContext();
-         sc.SyntaxProvider = new ActiveQueryBuilder.Core.SQLiteSyntaxProvider();
-         sc.MetadataProvider = new ActiveQueryBuilder.Core.SQLiteMetadataProvider();
-         sc.MetadataProvider.Connection = new System.Data.SQLite.SQLiteConnection();
-         sc.MetadataProvider.Connection.ConnectionString = cs;
-         //
-         //ActiveQueryBuilder.Core.SQLContext sc = new ActiveQueryBuilder.Core.SQLContext( )
-         //{
-         //   SyntaxProvider = new ActiveQueryBuilder.Core.SQLiteSyntaxProvider( ),
-         //   MetadataProvider = new ActiveQueryBuilder.Core.SQLiteMetadataProvider( )
-         //   {
-         //      Connection = new System.Data.SQLite.SQLiteConnection( )
-         //      {
-         //         ConnectionString = cs
-         //      }
-         //   }
-         //};
-         //
-         //{
-         //   sc.MetadataContainer.LoadAll( WithField );
-         //   sc.MetadataContainer.LoadingOptions.OfflineMode = true;
-         //   sc.MetadataContainer.ImportFromXML( filepath );
-         //}
-         return sc;
-      }
-      #endregion
-
-      #region --- Auto Handle and AQB-QB ---
-      public static ActiveQueryBuilder.Core.SQLContext CreateAqbQbAuto( string connectionString )
-      {
-         ActiveQueryBuilder.Core.SQLContext sc = new ActiveQueryBuilder.Core.SQLContext( )
-         {
-            SyntaxProvider = new ActiveQueryBuilder.Core.AutoSyntaxProvider( ),
-            MetadataProvider = new ActiveQueryBuilder.Core.UniversalMetadataProvider( )
-         };
-         //qb.MetadataProvider.Connection = new System.Data.SqlClient.SqlConnection( ds.ConnectionString );
-         sc.MetadataProvider.Connection = new System.Data.SQLite.SQLiteConnection( connectionString );
-         {
-            sc.LoadingOptions.OfflineMode = false;
-            sc.LoadingOptions.LoadSystemObjects = true;
-            sc.LoadingOptions.LoadDefaultDatabaseOnly = false;
-            sc.MetadataContainer.LoadAll( true );
-         }
-         return sc;
-      }
-      #endregion
-
-      #region --- MSSS Handle and AQB-QB ---
-      public static ActiveQueryBuilder.Core.SQLContext CreateAqbQbMSSS( string connectionString )
-      {
-         ActiveQueryBuilder.Core.SQLContext sc = new ActiveQueryBuilder.Core.SQLContext( )
-         {
-            SyntaxProvider = new ActiveQueryBuilder.Core.MSSQLSyntaxProvider( ),
-            MetadataProvider = new ActiveQueryBuilder.Core.MSSQLMetadataProvider( )
-         };
-         //qb.MetadataProvider.Connection = new System.Data.SQLite.SQLiteConnection( ds.ConnectionString );
-         sc.MetadataProvider.Connection = new System.Data.SqlClient.SqlConnection( connectionString );
-         {
-            sc.LoadingOptions.OfflineMode = false;
-            sc.LoadingOptions.LoadSystemObjects = false;
-            sc.LoadingOptions.LoadDefaultDatabaseOnly = true;
-            sc.MetadataContainer.LoadAll( true );
-         }
-         return sc;
-      }
-      #endregion
-
-      private class StackItem
-      {
-         public ActiveQueryBuilder.Core.MetadataList list;
-         public int index;
-         public int parentID;
-         public int grandParentID;
-      }
-
-      public static void DrillDownAqbSqlContext(
-         ActiveQueryBuilder.Core.SQLContext sc
-         , System.Data.DataTable tbl
-         , string dataStoreName
-         )
-      {
-         ActiveQueryBuilder.Core.MetadataList items = sc.MetadataContainer.Items;
-         //
-         System.Collections.Generic.Stack<StackItem> stack = new System.Collections.Generic.Stack<StackItem>( );
-         stack.Push( new StackItem { list = items, index = 0, parentID = -1, grandParentID = -1 } );
-         do
-         {
-            StackItem si = stack.Pop( );
-            ActiveQueryBuilder.Core.MetadataList actualMIList = si.list;
-            int actualIndex = si.index;
-            int actualParentID = si.grandParentID; // IMPORTANT!!!
-            for( ; actualIndex < actualMIList.Count; actualIndex++ )
-            {
-               System.Data.DataRow row = tbl.NewRow( );
-               row[ "DataStoreName" ] = dataStoreName;
-               ExtractMetadataItem( row, actualMIList[ actualIndex ], actualParentID, tbl );
-               tbl.Rows.Add( row );
-               if( actualMIList[ actualIndex ].Items.Count > 0 ) // branch...
-               {
-                  int count = tbl.Rows.Count;
-                  System.Data.DataRowCollection rows = tbl.Rows;
-                  int parentId = (int) rows[ count - 1 ][ "ID" ];
-                  // Push the "next" Item...
-                  stack.Push( new StackItem
-                  {
-                     list = actualMIList,
-                     index = actualIndex + 1,
-                     parentID = parentId,
-                     grandParentID = actualParentID
-                  } );
-                  // Reset the loop to process the "actual" Item...
-                  actualParentID = parentId;
-                  actualMIList = actualMIList[ actualIndex ].Items;
-                  actualIndex = -1;
-               }
-            } // for(;;)...
-         } while( stack.Count > 0 );
-      }
-
-      private static void ExtractMetadataItem(
-         System.Data.DataRow row
-         , ActiveQueryBuilder.Core.MetadataItem mi
-         , int parentID
-         , System.Data.DataTable tbl
-         )
-      {
-         switch( mi.Type )
-         {
-            case ActiveQueryBuilder.Core.MetadataType.Database:
-            case ActiveQueryBuilder.Core.MetadataType.Schema:
-               ExtractNamespace( row, mi, parentID, tbl );
-               break;
-            case ActiveQueryBuilder.Core.MetadataType.Table:
-            case ActiveQueryBuilder.Core.MetadataType.View:
-               ExtractTable( row, mi, parentID, tbl );
-               break;
-            case ActiveQueryBuilder.Core.MetadataType.Procedure:
-               ExtractProcedure( row, mi, parentID, tbl );
-               break;
-            case ActiveQueryBuilder.Core.MetadataType.Synonym:
-               ExtractSynonym( row, mi, parentID, tbl );
-               break;
-            case ActiveQueryBuilder.Core.MetadataType.Field:
-               ExtractField( row, mi, parentID, tbl );
-               break;
-            case ActiveQueryBuilder.Core.MetadataType.ForeignKey:
-               ExtractForeignKey( row, mi, parentID, tbl );
-               break;
-            case ActiveQueryBuilder.Core.MetadataType.Root:
-            case ActiveQueryBuilder.Core.MetadataType.Server:
-            case ActiveQueryBuilder.Core.MetadataType.Package:
-            case ActiveQueryBuilder.Core.MetadataType.Namespaces:
-            case ActiveQueryBuilder.Core.MetadataType.ObjectMetadata:
-            case ActiveQueryBuilder.Core.MetadataType.Objects:
-            case ActiveQueryBuilder.Core.MetadataType.Aggregate:
-            case ActiveQueryBuilder.Core.MetadataType.Parameter:
-            case ActiveQueryBuilder.Core.MetadataType.UserQuery:
-            case ActiveQueryBuilder.Core.MetadataType.UserField:
-            case ActiveQueryBuilder.Core.MetadataType.All:
-            default:
-               ExtractItem( row, mi, parentID, tbl );
-               break;
-         }
-      }
-
-      private static void ExtractNamespace(
-         System.Data.DataRow row
-         , ActiveQueryBuilder.Core.MetadataItem mi
-         , int parentID
-         , System.Data.DataTable tbl
-         )
-      {
-         if( mi == null )
-         {
-            return;
-         }
-
-         ExtractItem( row, mi, parentID, tbl );
-         {
-            //ActiveQueryBuilder.Core.MetadataNamespace m = mi as ActiveQueryBuilder.Core.MetadataNamespace;
-         }
-      }
-
-      private static void ExtractProcedure(
-         System.Data.DataRow row
-         , ActiveQueryBuilder.Core.MetadataItem mi
-         , int parentID
-         , System.Data.DataTable tbl
-         )
-      {
-         if( mi == null )
-         {
-            return;
-         }
-
-         ExtractItem( row, mi, parentID, tbl );
-         {
-            ActiveQueryBuilder.Core.MetadataObject m = mi as ActiveQueryBuilder.Core.MetadataObject;
-         }
-      }
-
-      private static void ExtractSynonym(
-         System.Data.DataRow row
-         , ActiveQueryBuilder.Core.MetadataItem mi
-         , int parentID
-         , System.Data.DataTable tbl
-         )
-      {
-         if( mi == null )
-         {
-            return;
-         }
-
-         ExtractItem( row, mi, parentID, tbl );
-         {
-            ActiveQueryBuilder.Core.MetadataObject m = mi as ActiveQueryBuilder.Core.MetadataObject;
-            row[ "ReferencedObject" ] = m.ReferencedObject?.NameFull;
-            //
-            for( int i = 0; i < m.ReferencedObjectName.Count; i++ )
-            {
-               ActiveQueryBuilder.Core.MetadataQualifiedNamePart x = m.ReferencedObjectName[ i ];
-               row[ "ReferencedObjectName" ] += "["
-               + System.Enum.GetName( typeof( ActiveQueryBuilder.Core.MetadataType ), x.Type )
-               + ":"
-               + x.Name
-               + "]"
-            ;
-            }
-         }
-      }
-
-      private static void ExtractTable(
-         System.Data.DataRow row
-         , ActiveQueryBuilder.Core.MetadataItem mi
-         , int parentID
-         , System.Data.DataTable tbl
-         )
-      {
-         if( mi == null )
-         {
-            return;
-         }
-
-         ExtractItem( row, mi, parentID, tbl );
-         {
-            //ActiveQueryBuilder.Core.MetadataObject m = mi as ActiveQueryBuilder.Core.MetadataObject;
-         }
-      }
-
-      private static void ExtractField(
-         System.Data.DataRow row
-         , ActiveQueryBuilder.Core.MetadataItem mi
-         , int parentID
-         , System.Data.DataTable tbl
-         )
-      {
-         if( mi == null )
-         {
-            return;
-         }
-
-         ExtractItem( row, mi, parentID, tbl );
-         {
-            ActiveQueryBuilder.Core.MetadataField m = mi as ActiveQueryBuilder.Core.MetadataField;
-            row[ "Expression" ] = m.Expression;
-            row[ "FieldType" ] = System.Enum.GetName( typeof( System.Data.DbType ), m.FieldType );
-            row[ "FieldTypeName" ] = m.FieldTypeName;
-            row[ "IsNullable" ] = m.Nullable;
-            row[ "Precision" ] = m.Precision;
-            row[ "Scale" ] = m.Scale;
-            row[ "Size" ] = m.Size;
-            row[ "IsPK" ] = m.PrimaryKey;
-            row[ "IsRO" ] = m.ReadOnly;
-         }
-      }
-
-      private static void ExtractForeignKey(
-         System.Data.DataRow row
-         , ActiveQueryBuilder.Core.MetadataItem mi
-         , int parentID
-         , System.Data.DataTable tbl
-         )
-      {
-         if( mi == null )
-         {
-            return;
-         }
-
-         ExtractItem( row, mi, parentID, tbl );
-         row[ "FieldType" ] = null;
-         {
-            ActiveQueryBuilder.Core.MetadataForeignKey m = mi as ActiveQueryBuilder.Core.MetadataForeignKey;
-            row[ "ReferencedObject" ] = m.ReferencedObject.NameFull;
-            //
-            for( int i = 0; i < m.ReferencedObjectName.Count; i++ )
-            {
-               ActiveQueryBuilder.Core.MetadataQualifiedNamePart x = m.ReferencedObjectName[ i ];
-               row[ "ReferencedObjectName" ] += "["
-               + System.Enum.GetName( typeof( ActiveQueryBuilder.Core.MetadataType ), x.Type )
-               + ":"
-               + x.Name
-               + "]"
-            ;
+               o.Count = (UInt32) r[ MdItem.COUNT_FIELDNAME ];
+               o.ID = (Int32) r[ MdItem.ID_FIELDNAME ];
+               o.DataStoreName = (string) r[ MdItem.DATASTORE_NAME_FIELDNAME ];
+               o.SnapshotName = (string) r[ MdItem.SNAPSHOT_FILE_FIELDNAME ].ToString( );
+               // o.LastWriteTimeUtc = (System.DateTime) r[ MdItem.LAST_WRITE_TIME_UTC_FIELDNAME ];
+               o.MetadataProvider = (string) r[ MdItem.METADATA_PROVIDER_FIELDNAME ];
+               o.SyntaxProvider = (string) r[ MdItem.SYNTAX_PROVIDER_FIELDNAME ];
+               o.ParentID = (Int32) r[ MdItem.PARENT_ID_FIELDNAME ];
+               o.IsSystem = (bool) r[ MdItem.IS_SYSTEM_FIELDNAME ];
+               o.Type = (string) r[ MdItem.TYPE_FIELDNAME ];
+               o.ParentType = (string) r[ MdItem.PARENT_TYPE_FIELDNAME ];
+               o.FkCardinality = (string) r[ MdItem.CARDINALYTY_FIELDNAME ].ToString( );
+               o.FieldsCount = (Int32) r[ MdItem.FIELDS_COUNT_FIELDNAME ];
+               o.FkFields = (string) r[ MdItem.FK_FIELDS_FIELDNAME ].ToString( );
+               o.TkCardinality = (string) r[ MdItem.REFERENCED_CARDINALYTY_FIELDNAME ].ToString( );
+               o.TkObject = (string) r[ MdItem.REFERENCED_OBJECT_FIELDNAME ].ToString( );
+               o.ReferencedObjectName = (string) r[ MdItem.REFERENCED_OBJECT_NAME_FIELDNAME ].ToString( );
+               o.ReferencedFieldsCount = (Int32) r[ MdItem.REFERENCED_FIELDS_COUNT_FIELDNAME ];
+               o.ReferencedFields = (string) r[ MdItem.REFERENCED_FIELDS_FIELDNAME ].ToString( );
+               o.Server = (string) r[ MdItem.SERVER_FIELDNAME ].ToString( );
+               o.Database = (string) r[ MdItem.DATABASE_FIELDNAME ].ToString( );
+               o.Schema = (string) r[ MdItem.SCHEMA_FIELDNAME ].ToString( );
+               o.ObjectName = (string) r[ MdItem.OBJECT_FIELDNAME ].ToString( );
+               o.NameFullQualified = (string) r[ MdItem.NAMEFULLQUALIFIED_FIELDNAME ].ToString( );
+               o.NameQuoted = r[ MdItem.NAMEQUOTED_FIELDNAME ].ToString( );
+               o.AltName = r[ MdItem.ALTNAME_FIELDNAME ].ToString( );
+               o.Name = r[ MdItem.NAME_FIELD_FIELDNAME ].ToString( );
+               o.HasDefault = (bool) r[ MdItem.HAS_DEFAULT_FIELDNAME ];
+               o.Expression = r[ MdItem.EXPRESSION_FIELDNAME ].ToString( );
+               //
+               o.DatabaseDatatype = (string) r[MdItem.FIELD_DATABASE_DATATYPE_FIELDNAME].ToString();
+               o.DotNetDatatype = (string) r[ MdItem.FIELD_DOT_NET_DATATYPE_FIELDNAME ].ToString();
+               o.IsNullable = (bool) r[ MdItem.IS_NULLABLE_FIELDNAME ];
+               o.Precision = (Int32) r[ MdItem.PRECISION_FIELDNAME ];
+               o.Scale = (int) r[ MdItem.SCALE_FIELDNAME ];
+               o.Size = (Int32) r[ MdItem.SIZE_FIELDNAME ];
+               o.IsPK = (bool) r[ MdItem.IS_PK_FIELDNAME ];
+               o.IsRO = (bool) r[ MdItem.IS_READONLY_FIELDNAME ];
+               o.Description = r[ MdItem.DESCRIPTION_FIELDNAME ].ToString( );
+               o.Tag = r[ MdItem.TAG_FIELDNAME ].ToString( );
+               o.UserData = r[ MdItem.USERDATA_FIELDNAME ].ToString( );
             }
             //
-            row[ "ReferencedFieldsCount" ] = m.ReferencedFields.Count;
-            for( int i = 0; i < m.ReferencedFields.Count; i++ )
-            {
-               row[ "ReferencedFields" ] += "[" + m.ReferencedFields[ i ] + "]";
-            }
-            //
-            row[ "ReferencedCardinality" ] = System.Enum.GetName( typeof( ActiveQueryBuilder.Core.MetadataForeignKeyCardinality ), m.ReferencedCardinality );
-            //
-            row[ "FieldsCount" ] = m.Fields.Count;
-            for( int i = 0; i < m.Fields.Count; i++ )
-            {
-               row[ "Fields" ] += "[" + m.Fields[ i ] + "]"
-            ;
-            }
-            //
-            row[ "Cardinality" ] = System.Enum.GetName( typeof( ActiveQueryBuilder.Core.MetadataForeignKeyCardinality ), m.Cardinality );
+            o.Save( );
+            this.xpCollection1.Add( o );
          }
       }
-
-      private static void ExtractItem(
-         System.Data.DataRow row
-         , ActiveQueryBuilder.Core.MetadataItem mi
-         , int parentID
-         , System.Data.DataTable tbl
-         )
-      {
-         row[ "Count" ] = 1;
-         row[ "ID" ] = tbl.Rows.Count;
-         row[ "ParentID" ] = parentID;
-         row[ "MetadataProvider" ] = mi.SQLContext?.MetadataProvider?.Description;
-         row[ "SyntaxProvider" ] = mi.SQLContext?.SyntaxProvider?.Description;
-         if( mi.Parent != null )
-         {
-            row[ "ParentType" ] = System.Enum.GetName( typeof( ActiveQueryBuilder.Core.MetadataType ), mi.Parent.Type );
-         }
-         row[ nameof( Type ) ] = System.Enum.GetName( typeof( ActiveQueryBuilder.Core.MetadataType ), mi.Type );
-         row[ "IsSystem" ] = mi.System;
-         ////
-         //string rootName = mi.Root?.Name;
-         row[ "Server" ] = mi.Server?.Name;
-         row[ "Database" ] = mi.Database?.Name;
-         row[ "Schema" ] = mi.Schema?.Name;
-         row[ "ObjectName" ] = mi.Object?.Name;
-         ////
-         row[ "NameFullQualified" ] = mi.NameFull + (mi.NameFull.EndsWith( "." ) ? "<?>" : string.Empty);
-         row[ "NameQuoted" ] = mi.NameQuoted;
-         row[ "AltName" ] = mi.AltName;
-         row[ "Field" ] = mi.Name != null ? mi.Name : "<?>";
-         ////
-         row[ "HasDefault" ] = mi.Default;
-         row[ "Description" ] = mi.Description;
-         row[ "Tag" ] = mi.Tag;
-         row[ "UserData" ] = mi.UserData;
-      }
-      #endregion
    }
 }

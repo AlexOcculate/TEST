@@ -1,13 +1,13 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<visualDesignerDiagram dslVersion="1.0.0.0" Id="c9dfe20b-2c06-4612-a5ea-b03c4346c35b" absoluteBounds="0, 0, 11, 12.25" name="ORMDataModel">
+<visualDesignerDiagram dslVersion="1.0.0.0" Id="c9dfe20b-2c06-4612-a5ea-b03c4346c35b" absoluteBounds="0, 0, 11, 9.875" name="ORMDataModel">
   <dataBaseObjectModelMoniker Id="ee34ea9d-d649-4d47-9350-74c461326861" />
   <nestedChildShapes>
-    <xpObjectShape Id="7b291bf0-2a83-4ed3-af98-de7d13026d72" absoluteBounds="1.25, 3.375, 2.4375, 8.6779248046875015">
+    <xpObjectShape Id="7b291bf0-2a83-4ed3-af98-de7d13026d72" absoluteBounds="1, 0.75, 2.4375, 8.8702262369791676">
       <xpObjectMoniker Id="5baba908-69ae-47cf-acfa-eac172593d5e" />
       <nestedChildShapes>
-        <elementListCompartment Id="564c3f65-7afe-4f78-8c9b-2fa8dbcfd7f9" absoluteBounds="1.265, 3.685, 2.4074999999999998, 7.7491455078125" name="Fields" titleTextColor="Black" itemTextColor="Black" />
-        <elementListCompartment Id="04abafc7-b0e6-4340-b1db-a0bf141e46f4" absoluteBounds="1.265, 11.4441455078125, 2.4074999999999998, 0.2493896484375" name="Indexes" titleTextColor="Black" itemTextColor="Black" />
-        <elementListCompartment Id="bd530890-7a41-4e65-b76a-3c61f9f2de6e" absoluteBounds="1.265, 11.70353515625, 2.4074999999999998, 0.24938964843750178" name="Collections" titleTextColor="Black" itemTextColor="Black" />
+        <elementListCompartment Id="564c3f65-7afe-4f78-8c9b-2fa8dbcfd7f9" absoluteBounds="1.015, 1.06, 2.4074999999999998, 7.9414469401041661" name="Fields" titleTextColor="Black" itemTextColor="Black" />
+        <elementListCompartment Id="04abafc7-b0e6-4340-b1db-a0bf141e46f4" absoluteBounds="1.015, 9.0114469401041664, 2.4074999999999998, 0.2493896484375" name="Indexes" titleTextColor="Black" itemTextColor="Black" />
+        <elementListCompartment Id="bd530890-7a41-4e65-b76a-3c61f9f2de6e" absoluteBounds="1.015, 9.2708365885416661, 2.4074999999999998, 0.24938964843750178" name="Collections" titleTextColor="Black" itemTextColor="Black" />
       </nestedChildShapes>
     </xpObjectShape>
   </nestedChildShapes>

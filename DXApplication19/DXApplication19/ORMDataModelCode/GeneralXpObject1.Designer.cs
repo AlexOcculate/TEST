@@ -16,17 +16,17 @@ namespace AQBMetadata.ORMDataModel
 
    public partial class MetadataItemXpObject : XPObject
    {
-      string fID;
-      public string ID
+      int fID;
+      public int ID
       {
          get { return fID; }
-         set { SetPropertyValue<string>( nameof( ID ), ref fID, value ); }
+         set { SetPropertyValue<int>( nameof( ID ), ref fID, value ); }
       }
-      string fParentID;
-      public string ParentID
+      int fParentID;
+      public int ParentID
       {
          get { return fParentID; }
-         set { SetPropertyValue<string>( nameof( ParentID ), ref fParentID, value ); }
+         set { SetPropertyValue<int>( nameof( ParentID ), ref fParentID, value ); }
       }
       string fDataStoreName;
       public string DataStoreName
@@ -108,19 +108,18 @@ namespace AQBMetadata.ORMDataModel
          get { return fNameFullQualified; }
          set { SetPropertyValue<string>( nameof( NameFullQualified ), ref fNameFullQualified, value ); }
       }
-      string fCardinality;
-      [DevExpress.Xpo.DisplayName( @"FkCardinality" )]
-      public string Cardinality
+      string fFkCardinality;
+      public string FkCardinality
       {
-         get { return fCardinality; }
-         set { SetPropertyValue<string>( nameof( Cardinality ), ref fCardinality, value ); }
+         get { return fFkCardinality; }
+         set { SetPropertyValue<string>( nameof( FkCardinality ), ref fFkCardinality, value ); }
       }
-      ushort fFieldsCount;
+      int fFieldsCount;
       [DevExpress.Xpo.DisplayName( @"FkFieldCount" )]
-      public ushort FieldsCount
+      public int FieldsCount
       {
          get { return fFieldsCount; }
-         set { SetPropertyValue<ushort>( nameof( FieldsCount ), ref fFieldsCount, value ); }
+         set { SetPropertyValue<int>( nameof( FieldsCount ), ref fFieldsCount, value ); }
       }
       string fFkFields;
       public string FkFields
@@ -128,19 +127,17 @@ namespace AQBMetadata.ORMDataModel
          get { return fFkFields; }
          set { SetPropertyValue<string>( nameof( FkFields ), ref fFkFields, value ); }
       }
-      string fReferencedCardinality;
-      [DevExpress.Xpo.DisplayName( @"TkCardinality" )]
-      public string ReferencedCardinality
+      string fTkCardinality;
+      public string TkCardinality
       {
-         get { return fReferencedCardinality; }
-         set { SetPropertyValue<string>( nameof( ReferencedCardinality ), ref fReferencedCardinality, value ); }
+         get { return fTkCardinality; }
+         set { SetPropertyValue<string>( nameof( TkCardinality ), ref fTkCardinality, value ); }
       }
-      string fReferencedObject;
-      [DevExpress.Xpo.DisplayName( @"TkObject" )]
-      public string ReferencedObject
+      string fTkObject;
+      public string TkObject
       {
-         get { return fReferencedObject; }
-         set { SetPropertyValue<string>( nameof( ReferencedObject ), ref fReferencedObject, value ); }
+         get { return fTkObject; }
+         set { SetPropertyValue<string>( nameof( TkObject ), ref fTkObject, value ); }
       }
       string fReferencedObjectName;
       [DevExpress.Xpo.DisplayName( @"TkObjectName" )]
@@ -149,12 +146,12 @@ namespace AQBMetadata.ORMDataModel
          get { return fReferencedObjectName; }
          set { SetPropertyValue<string>( nameof( ReferencedObjectName ), ref fReferencedObjectName, value ); }
       }
-      ushort fReferencedFieldsCount;
+      int fReferencedFieldsCount;
       [DevExpress.Xpo.DisplayName( @"TkFieldsCount" )]
-      public ushort ReferencedFieldsCount
+      public int ReferencedFieldsCount
       {
          get { return fReferencedFieldsCount; }
-         set { SetPropertyValue<ushort>( nameof( ReferencedFieldsCount ), ref fReferencedFieldsCount, value ); }
+         set { SetPropertyValue<int>( nameof( ReferencedFieldsCount ), ref fReferencedFieldsCount, value ); }
       }
       string fReferencedFields;
       [DevExpress.Xpo.DisplayName( @"TkFields" )]
@@ -212,23 +209,23 @@ namespace AQBMetadata.ORMDataModel
          get { return fIsNullable; }
          set { SetPropertyValue<bool>( nameof( IsNullable ), ref fIsNullable, value ); }
       }
-      ushort fPrecision;
-      public ushort Precision
+      int fPrecision;
+      public int Precision
       {
          get { return fPrecision; }
-         set { SetPropertyValue<ushort>( nameof( Precision ), ref fPrecision, value ); }
+         set { SetPropertyValue<int>( nameof( Precision ), ref fPrecision, value ); }
       }
-      ushort fScale;
-      public ushort Scale
+      int fScale;
+      public int Scale
       {
          get { return fScale; }
-         set { SetPropertyValue<ushort>( nameof( Scale ), ref fScale, value ); }
+         set { SetPropertyValue<int>( nameof( Scale ), ref fScale, value ); }
       }
-      ulong fSize;
-      public ulong Size
+      int fSize;
+      public int Size
       {
          get { return fSize; }
-         set { SetPropertyValue<ulong>( nameof( Size ), ref fSize, value ); }
+         set { SetPropertyValue<int>( nameof( Size ), ref fSize, value ); }
       }
       bool fIsPK;
       public bool IsPK
@@ -259,6 +256,12 @@ namespace AQBMetadata.ORMDataModel
       {
          get { return fUserData; }
          set { SetPropertyValue<string>( nameof( UserData ), ref fUserData, value ); }
+      }
+      ulong fCount;
+      public ulong Count
+      {
+         get { return fCount; }
+         set { SetPropertyValue<ulong>( nameof( Count ), ref fCount, value ); }
       }
    }
 
