@@ -27,6 +27,7 @@ namespace DXApplication19
          //InitialCatalog = @"Sales"
       };
 
+
       public Form1()
       {
          this.InitializeComponent( );
