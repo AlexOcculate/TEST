@@ -15,12 +15,30 @@ namespace StandaloneQueryBuilderSample
    {
       private class NoPreviewQueryBuilderView : QueryBuilderView
       {
-         public NoPreviewQueryBuilderView(IQueryBuilderViewModel viewModel, IWin32Window owner,
-             UserLookAndFeel lookAndFeel, IParameterService parameterService, IServiceProvider propertyGridServices,
-             bool noCustomSql, bool light, IDisplayNameProvider displayNameProvider, bool noDiagram, bool legacyExpressionEditor,
-             IExceptionHandler loaderExceptionHandler, IRepositoryItemsProvider repositoryItemsProvider)
-             : base(viewModel, owner, lookAndFeel, parameterService, propertyGridServices, noCustomSql, light, displayNameProvider,
-             noDiagram, legacyExpressionEditor, loaderExceptionHandler, repositoryItemsProvider)
+         public NoPreviewQueryBuilderView(IQueryBuilderViewModel viewModel, 
+            IWin32Window owner,
+            UserLookAndFeel lookAndFeel, 
+            IParameterService parameterService, 
+            IServiceProvider propertyGridServices,
+            bool noCustomSql, 
+            bool light, 
+            IDisplayNameProvider displayNameProvider, 
+            bool noDiagram, 
+            bool legacyExpressionEditor,
+            IExceptionHandler loaderExceptionHandler, 
+            IRepositoryItemsProvider repositoryItemsProvider)
+             : base(viewModel, 
+                owner, 
+                lookAndFeel, 
+                parameterService, 
+                propertyGridServices, 
+                noCustomSql, 
+                light, 
+                displayNameProvider,
+                noDiagram, 
+                legacyExpressionEditor, 
+                loaderExceptionHandler, 
+                repositoryItemsProvider)
          {
             this.layoutItemFilterButton.OptionsTableLayoutItem.ColumnIndex = 0;
             this.layoutItemParametersButton.OptionsTableLayoutItem.ColumnIndex = 1;

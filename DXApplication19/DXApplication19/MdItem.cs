@@ -992,10 +992,10 @@ namespace AQBMetadata
          )
       {
          {
-            row[ MdItem.FIELD_DATABASE_DATATYPE_FIELDNAME ] = string.Empty;
-            row[ MdItem.FIELD_DOT_NET_DATATYPE_FIELDNAME ] = string.Empty;
+            row[ FIELD_DATABASE_DATATYPE_FIELDNAME ] = string.Empty;
+            row[ FIELD_DOT_NET_DATATYPE_FIELDNAME ] = string.Empty;
             row[ FIELDS_COUNT_FIELDNAME ] = 0;
-            row[ MdItem.REFERENCED_FIELDS_COUNT_FIELDNAME ] = 0;
+            row[ REFERENCED_FIELDS_COUNT_FIELDNAME ] = 0;
             row[ IS_NULLABLE_FIELDNAME ] = false;
             row[ PRECISION_FIELDNAME ] = 0;
             row[ SCALE_FIELDNAME ] = 0;
