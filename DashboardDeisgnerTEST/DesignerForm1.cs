@@ -141,9 +141,9 @@ The ConfigureDataConnection event is raised before the connection to a data stor
 - DashboardExcelDataSource 
 - DashboardExtractDataSource
 
-If the dashboard is supplied with data using the DashboardObjectDataSource data source, the DataLoading event is fired instead.
+If the dashboard is supplied with data using the DashboardObjectDataSource data source, the [DataLoading event] is fired instead.
 
-This dialog allows end-users to select whether to trust the object data sources available in the application. You can change this default logic using the DataSourceOptionsContainer.ObjectDataSourceLoadingBehavior property. For instance, you can allow loading any object data sources, or you can load object data sources in a safe mode when their data member and data source settings are cleared. To obtain the DataSourceOptionsContainer object (that exposes DataSourceOptionsContainer.ObjectDataSourceLoadingBehavior), use the DataSourceOptions properties exposed by the DashboardDesigner and DashboardViewer controls.
+This dialog allows end-users to select whether to trust the object data sources available in the application. You can change this default logic using the [DataSourceOptionsContainer.ObjectDataSourceLoadingBehavior] property. For instance, you can allow loading any object data sources, or you can load object data sources in a safe mode when their data member and data source settings are cleared. To obtain the DataSourceOptionsContainer object (that exposes DataSourceOptionsContainer.ObjectDataSourceLoadingBehavior), use the DataSourceOptions properties exposed by the DashboardDesigner and DashboardViewer controls.
 
 You can also provide a custom data source validation by handling the ObjectDataSource.BeforeFill event for the specified data source. The corresponding static ObjectDataSource.BeforeFillGlobal event allows you to validate all object data sources in your application.
 
